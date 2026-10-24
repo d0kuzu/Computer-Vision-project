@@ -1,0 +1,14 @@
+{
+  "source": "MNIST",
+  "download_url": "https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz",
+  "documentation": "https://keras.io/api/datasets/mnist/",
+  "source_sha256": "731c5ac602752760c8e48fbffcf8c3b850d9dc2a2aedcf2cc48468fc17b673d1",
+  "seed": 42,
+  "self_collected": false,
+  "writer_ids_available": false,
+  "images": 2000,
+  "modifications": "Balanced subset, dark-on-white inversion, PNG export",
+  "attribution": "Yann LeCun and Corinna Cortes; derived from NIST datasets",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+}

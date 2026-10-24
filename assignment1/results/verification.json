@@ -1,0 +1,8 @@
+{
+  "notebook": "all code cells executed, no errors",
+  "cnn_reload": "300/300 predictions match notebook",
+  "baseline_reload": "300/300 predictions match notebook",
+  "metrics": "recomputed from saved predictions",
+  "report_pages": 5,
+  "demo": "HTTP page, prediction and blank-input checks passed"
+}

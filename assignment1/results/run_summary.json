@@ -1,0 +1,16 @@
+{
+  "seed": 42,
+  "dataset": "MNIST subset (not self-collected)",
+  "train_original": 1400,
+  "train_with_augmentation": 2800,
+  "validation": 300,
+  "test": 300,
+  "baseline_C": 0.1,
+  "baseline_seconds": 3.219130299985409,
+  "cnn_seconds": 56.286089700006414,
+  "cnn_parameters": 356234,
+  "epochs_run": 26,
+  "best_epoch": 20,
+  "best_validation_macro_f1": 0.9737476459510358,
+  "total_seconds": 80.56632370001171
+}
