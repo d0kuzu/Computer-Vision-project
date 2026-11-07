@@ -1,0 +1,47 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 1,
+    "erosion_mix": 0.8
+  },
+  "seed": 100103,
+  "mask_indices": [
+    52,
+    65,
+    70,
+    101
+  ],
+  "original_codes": [
+    1116,
+    1668,
+    5112,
+    4803
+  ],
+  "replacement_codes": [
+    1182,
+    1682,
+    7889,
+    7723
+  ],
+  "changed_code_count": 4,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.8726913928985596,
+  "changed_pixels": 9990,
+  "max_pixel_change": 64,
+  "sample_id": "d0-v103",
+  "source_relative_path": "0/mnist_train_09978.png",
+  "source_sha256": "d287f5ca431c28d87390e139cde3308ccc558850666659d217bbde60d57af9e5",
+  "source_index": 9978,
+  "variant": 103,
+  "control_variant": 1,
+  "replaces": "d0-v097",
+  "replaces_sha256": "3f59149bbdf26928d9cfa10fef44f40eaec956cbb0d26bfd6623414389d25718",
+  "replacement_reason": "An interior diagonal stroke divides the oval into two separate openings, giving the source and derivative the shape of a slanted eight.",
+  "sha256": "e9e364664db277fa6ddda883992f73c70820eca2adc40d84333e597dd40f7e2e"
+}

@@ -5,5 +5,9 @@ __pycache__/
 /assignment2/reproduced/
 /assignment2/outputs/*
 !/assignment2/outputs/reference_maskgen_cadcae3f15d2/
+!/assignment2/outputs/reference_maskgen_extension_880/
+!/assignment2/outputs/reference_maskgen_reserve/
+!/assignment2/outputs/synthetic_1000/
 /assignment2/outputs/*/*.zip
+!/assignment2/outputs/synthetic_1000/digits_3000.zip
 /assignment2/CV_Assignment_2 (2).pdf

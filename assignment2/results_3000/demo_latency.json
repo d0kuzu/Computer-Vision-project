@@ -1,0 +1,484 @@
+{
+  "measured_utc": "2026-11-07T15:53:35.075141+00:00",
+  "checkpoint": "assignment2/results_3000/cnn_a2.pt",
+  "checkpoint_sha256": "6b094687333c03f9a2ae65edc8b6ab195127a39881079084a6fbb1ddd95c5335",
+  "selected_model": "control",
+  "benchmark": "demo.Recognizer.predict (in process)",
+  "scope": "perf_counter around encoder and classifier forward passes with gradients enabled for Grad-CAM",
+  "excluded": [
+    "model loading",
+    "image I/O",
+    "preprocessing",
+    "softmax",
+    "Grad-CAM backward pass and overlay",
+    "network, browser rendering and interaction"
+  ],
+  "browser": null,
+  "environment": {
+    "device": "CPU",
+    "processor": "Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz",
+    "os": "Windows-10-10.0.19045-SP0",
+    "logical_processors": 4,
+    "torch_version": "2.6.0+cpu",
+    "torch_intraop_threads": 2,
+    "torch_interop_threads": 4,
+    "python": "3.12.14",
+    "batch_size": 1
+  },
+  "input": "Fixed A1 test manifest order: ten examples per digit, interleaved 0\u20139.",
+  "warmup_excluded": 20,
+  "warmup_paths": [
+    "0/mnist_test_03479.png",
+    "1/mnist_test_06758.png",
+    "2/mnist_test_05105.png",
+    "3/mnist_test_04990.png",
+    "4/mnist_test_07653.png",
+    "5/mnist_test_06522.png",
+    "6/mnist_test_06966.png",
+    "7/mnist_test_06364.png",
+    "8/mnist_test_06755.png",
+    "9/mnist_test_05707.png",
+    "0/mnist_test_09818.png",
+    "1/mnist_test_03026.png",
+    "2/mnist_test_09341.png",
+    "3/mnist_test_07956.png",
+    "4/mnist_test_08131.png",
+    "5/mnist_test_04076.png",
+    "6/mnist_test_09053.png",
+    "7/mnist_test_01126.png",
+    "8/mnist_test_09991.png",
+    "9/mnist_test_05042.png"
+  ],
+  "summary": {
+    "n": 100,
+    "mean_ms": 0.9385730000212789,
+    "median_ms": 0.9250000002793968,
+    "p95_ms": 1.0723250132286921
+  },
+  "samples": [
+    {
+      "relative_path": "0/mnist_test_00704.png",
+      "elapsed_ms": 0.8865999989211559
+    },
+    {
+      "relative_path": "1/mnist_test_04653.png",
+      "elapsed_ms": 0.9115000138990581
+    },
+    {
+      "relative_path": "2/mnist_test_04801.png",
+      "elapsed_ms": 1.0957999911624938
+    },
+    {
+      "relative_path": "3/mnist_test_08860.png",
+      "elapsed_ms": 0.9310000168625265
+    },
+    {
+      "relative_path": "4/mnist_test_08511.png",
+      "elapsed_ms": 0.8924999856390059
+    },
+    {
+      "relative_path": "5/mnist_test_00791.png",
+      "elapsed_ms": 0.9525000059511513
+    },
+    {
+      "relative_path": "6/mnist_test_07816.png",
+      "elapsed_ms": 0.9126999939326197
+    },
+    {
+      "relative_path": "7/mnist_test_04855.png",
+      "elapsed_ms": 0.8851999882608652
+    },
+    {
+      "relative_path": "8/mnist_test_00177.png",
+      "elapsed_ms": 0.8851999882608652
+    },
+    {
+      "relative_path": "9/mnist_test_07118.png",
+      "elapsed_ms": 1.0720000136643648
+    },
+    {
+      "relative_path": "0/mnist_test_05307.png",
+      "elapsed_ms": 0.9285999985877424
+    },
+    {
+      "relative_path": "1/mnist_test_06108.png",
+      "elapsed_ms": 0.8870000019669533
+    },
+    {
+      "relative_path": "2/mnist_test_05417.png",
+      "elapsed_ms": 0.8892999903764576
+    },
+    {
+      "relative_path": "3/mnist_test_07644.png",
+      "elapsed_ms": 0.8980999991763383
+    },
+    {
+      "relative_path": "4/mnist_test_00722.png",
+      "elapsed_ms": 0.908499991055578
+    },
+    {
+      "relative_path": "5/mnist_test_03468.png",
+      "elapsed_ms": 0.9151000122074038
+    },
+    {
+      "relative_path": "6/mnist_test_02131.png",
+      "elapsed_ms": 0.9470999939367175
+    },
+    {
+      "relative_path": "7/mnist_test_05154.png",
+      "elapsed_ms": 0.9688000136520714
+    },
+    {
+      "relative_path": "8/mnist_test_09462.png",
+      "elapsed_ms": 0.919299985980615
+    },
+    {
+      "relative_path": "9/mnist_test_01304.png",
+      "elapsed_ms": 0.9262000094167888
+    },
+    {
+      "relative_path": "0/mnist_test_00561.png",
+      "elapsed_ms": 0.9261999803129584
+    },
+    {
+      "relative_path": "1/mnist_test_05486.png",
+      "elapsed_ms": 1.0120999941136688
+    },
+    {
+      "relative_path": "2/mnist_test_09521.png",
+      "elapsed_ms": 0.9361999982502311
+    },
+    {
+      "relative_path": "3/mnist_test_05019.png",
+      "elapsed_ms": 0.9000000136438757
+    },
+    {
+      "relative_path": "4/mnist_test_01488.png",
+      "elapsed_ms": 0.8833000028971583
+    },
+    {
+      "relative_path": "5/mnist_test_08192.png",
+      "elapsed_ms": 0.9459000139031559
+    },
+    {
+      "relative_path": "6/mnist_test_06667.png",
+      "elapsed_ms": 0.9002999868243933
+    },
+    {
+      "relative_path": "7/mnist_test_05549.png",
+      "elapsed_ms": 0.8783999946899712
+    },
+    {
+      "relative_path": "8/mnist_test_01774.png",
+      "elapsed_ms": 0.9482999739702791
+    },
+    {
+      "relative_path": "9/mnist_test_01825.png",
+      "elapsed_ms": 0.8864999981597066
+    },
+    {
+      "relative_path": "0/mnist_test_01692.png",
+      "elapsed_ms": 0.8918999810703099
+    },
+    {
+      "relative_path": "1/mnist_test_05271.png",
+      "elapsed_ms": 0.8750999986659735
+    },
+    {
+      "relative_path": "2/mnist_test_00174.png",
+      "elapsed_ms": 0.887200003489852
+    },
+    {
+      "relative_path": "3/mnist_test_04087.png",
+      "elapsed_ms": 0.9716000058688223
+    },
+    {
+      "relative_path": "4/mnist_test_01147.png",
+      "elapsed_ms": 0.8861000242177397
+    },
+    {
+      "relative_path": "5/mnist_test_06120.png",
+      "elapsed_ms": 0.90819998877123
+    },
+    {
+      "relative_path": "6/mnist_test_05928.png",
+      "elapsed_ms": 1.282899989746511
+    },
+    {
+      "relative_path": "7/mnist_test_09869.png",
+      "elapsed_ms": 0.9501999884378165
+    },
+    {
+      "relative_path": "8/mnist_test_09910.png",
+      "elapsed_ms": 0.9258000063709915
+    },
+    {
+      "relative_path": "9/mnist_test_03716.png",
+      "elapsed_ms": 0.9667999984230846
+    },
+    {
+      "relative_path": "0/mnist_test_05870.png",
+      "elapsed_ms": 0.9992000123020262
+    },
+    {
+      "relative_path": "1/mnist_test_04428.png",
+      "elapsed_ms": 0.9154000144917518
+    },
+    {
+      "relative_path": "2/mnist_test_09995.png",
+      "elapsed_ms": 0.8990000060293823
+    },
+    {
+      "relative_path": "3/mnist_test_03045.png",
+      "elapsed_ms": 0.8954000077210367
+    },
+    {
+      "relative_path": "4/mnist_test_08520.png",
+      "elapsed_ms": 0.9617999894544482
+    },
+    {
+      "relative_path": "5/mnist_test_02689.png",
+      "elapsed_ms": 1.108099997509271
+    },
+    {
+      "relative_path": "6/mnist_test_00138.png",
+      "elapsed_ms": 0.9374000073876232
+    },
+    {
+      "relative_path": "7/mnist_test_09743.png",
+      "elapsed_ms": 0.9248999995179474
+    },
+    {
+      "relative_path": "8/mnist_test_04820.png",
+      "elapsed_ms": 0.9381000127177685
+    },
+    {
+      "relative_path": "9/mnist_test_02196.png",
+      "elapsed_ms": 0.9588999964762479
+    },
+    {
+      "relative_path": "0/mnist_test_08448.png",
+      "elapsed_ms": 0.8901999972295016
+    },
+    {
+      "relative_path": "1/mnist_test_06869.png",
+      "elapsed_ms": 0.8828999998513609
+    },
+    {
+      "relative_path": "2/mnist_test_00452.png",
+      "elapsed_ms": 0.9384999866597354
+    },
+    {
+      "relative_path": "3/mnist_test_06289.png",
+      "elapsed_ms": 0.9305999847128987
+    },
+    {
+      "relative_path": "4/mnist_test_07456.png",
+      "elapsed_ms": 0.9520999738015234
+    },
+    {
+      "relative_path": "5/mnist_test_09338.png",
+      "elapsed_ms": 1.0565999837126583
+    },
+    {
+      "relative_path": "6/mnist_test_06237.png",
+      "elapsed_ms": 0.8897999941837043
+    },
+    {
+      "relative_path": "7/mnist_test_04357.png",
+      "elapsed_ms": 0.96010000561364
+    },
+    {
+      "relative_path": "8/mnist_test_02724.png",
+      "elapsed_ms": 0.9184000082314014
+    },
+    {
+      "relative_path": "9/mnist_test_06632.png",
+      "elapsed_ms": 0.8978999976534396
+    },
+    {
+      "relative_path": "0/mnist_test_03677.png",
+      "elapsed_ms": 0.9480000007897615
+    },
+    {
+      "relative_path": "1/mnist_test_00276.png",
+      "elapsed_ms": 0.9695999906398356
+    },
+    {
+      "relative_path": "2/mnist_test_00633.png",
+      "elapsed_ms": 0.9328000014647841
+    },
+    {
+      "relative_path": "3/mnist_test_06714.png",
+      "elapsed_ms": 1.0785000049509108
+    },
+    {
+      "relative_path": "4/mnist_test_05474.png",
+      "elapsed_ms": 0.961300014751032
+    },
+    {
+      "relative_path": "5/mnist_test_00478.png",
+      "elapsed_ms": 1.018200011458248
+    },
+    {
+      "relative_path": "6/mnist_test_02066.png",
+      "elapsed_ms": 0.9094999986700714
+    },
+    {
+      "relative_path": "7/mnist_test_07356.png",
+      "elapsed_ms": 0.8703999919816852
+    },
+    {
+      "relative_path": "8/mnist_test_04743.png",
+      "elapsed_ms": 0.9980000031646341
+    },
+    {
+      "relative_path": "9/mnist_test_02443.png",
+      "elapsed_ms": 0.8716000011190772
+    },
+    {
+      "relative_path": "0/mnist_test_07363.png",
+      "elapsed_ms": 0.9251000010408461
+    },
+    {
+      "relative_path": "1/mnist_test_01040.png",
+      "elapsed_ms": 0.8535000088158995
+    },
+    {
+      "relative_path": "2/mnist_test_09832.png",
+      "elapsed_ms": 0.9221000073011965
+    },
+    {
+      "relative_path": "3/mnist_test_00334.png",
+      "elapsed_ms": 0.8691000111866742
+    },
+    {
+      "relative_path": "4/mnist_test_05822.png",
+      "elapsed_ms": 0.9345000144094229
+    },
+    {
+      "relative_path": "5/mnist_test_03994.png",
+      "elapsed_ms": 0.96010000561364
+    },
+    {
+      "relative_path": "6/mnist_test_00201.png",
+      "elapsed_ms": 0.909399997908622
+    },
+    {
+      "relative_path": "7/mnist_test_06158.png",
+      "elapsed_ms": 0.8713999995961785
+    },
+    {
+      "relative_path": "8/mnist_test_02744.png",
+      "elapsed_ms": 0.9630999993532896
+    },
+    {
+      "relative_path": "9/mnist_test_01481.png",
+      "elapsed_ms": 1.1992000218015164
+    },
+    {
+      "relative_path": "0/mnist_test_01610.png",
+      "elapsed_ms": 0.9621999925002456
+    },
+    {
+      "relative_path": "1/mnist_test_00388.png",
+      "elapsed_ms": 0.8876000065356493
+    },
+    {
+      "relative_path": "2/mnist_test_09417.png",
+      "elapsed_ms": 1.0654000216163695
+    },
+    {
+      "relative_path": "3/mnist_test_01588.png",
+      "elapsed_ms": 0.9411999781150371
+    },
+    {
+      "relative_path": "4/mnist_test_09866.png",
+      "elapsed_ms": 1.031799998600036
+    },
+    {
+      "relative_path": "5/mnist_test_06077.png",
+      "elapsed_ms": 1.0273999942000955
+    },
+    {
+      "relative_path": "6/mnist_test_04536.png",
+      "elapsed_ms": 0.9145000076387078
+    },
+    {
+      "relative_path": "7/mnist_test_02290.png",
+      "elapsed_ms": 0.906600005691871
+    },
+    {
+      "relative_path": "8/mnist_test_04748.png",
+      "elapsed_ms": 0.8891999896150082
+    },
+    {
+      "relative_path": "9/mnist_test_03075.png",
+      "elapsed_ms": 0.9348000166937709
+    },
+    {
+      "relative_path": "0/mnist_test_02378.png",
+      "elapsed_ms": 0.9375999798066914
+    },
+    {
+      "relative_path": "1/mnist_test_08229.png",
+      "elapsed_ms": 0.8608000061940402
+    },
+    {
+      "relative_path": "2/mnist_test_09006.png",
+      "elapsed_ms": 0.873600016348064
+    },
+    {
+      "relative_path": "3/mnist_test_06704.png",
+      "elapsed_ms": 0.9067000064533204
+    },
+    {
+      "relative_path": "4/mnist_test_06295.png",
+      "elapsed_ms": 0.9660999930929393
+    },
+    {
+      "relative_path": "5/mnist_test_08072.png",
+      "elapsed_ms": 0.9143000061158091
+    },
+    {
+      "relative_path": "6/mnist_test_03671.png",
+      "elapsed_ms": 0.974299997324124
+    },
+    {
+      "relative_path": "7/mnist_test_02278.png",
+      "elapsed_ms": 0.8777999901212752
+    },
+    {
+      "relative_path": "8/mnist_test_09673.png",
+      "elapsed_ms": 0.8795000030659139
+    },
+    {
+      "relative_path": "9/mnist_test_00212.png",
+      "elapsed_ms": 0.9091999963857234
+    }
+  ],
+  "figure_layer": "ReLU activation of the final convolution immediately before the last MaxPool",
+  "figure_examples": [
+    {
+      "relative_path": "5/mnist_test_00132.png",
+      "source_index": 132,
+      "input_pixel_sha256": "fb23ff2da27be31ca4e352e8991689394ac171ba5509c929212e55d94ec63c7d",
+      "true_class": "5",
+      "predicted_class": "5",
+      "softmax_score": 0.9999996423721313,
+      "positive_gradcam": true
+    },
+    {
+      "relative_path": "5/mnist_test_02224.png",
+      "source_index": 2224,
+      "input_pixel_sha256": "4d3976e83de29e6b9ebe8ea29d793a4504fe51acd8cf7280b97cba5105d2df7f",
+      "true_class": "5",
+      "predicted_class": "8",
+      "softmax_score": 0.7076877355575562,
+      "positive_gradcam": true
+    }
+  ],
+  "figure_selection": "Lowest official test index among errors, then the lowest-index correct case of the same true digit if available. A perfect run shows a single correct case.",
+  "figure_interpretation": "Each overlay highlights positive contributions to the pictured prediction from the final convolution. Each map uses its own maximum for scaling.",
+  "recognizer_model": "CNN A2 \u00b7 \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044c \u0441 \u043f\u043e\u0432\u0442\u043e\u0440\u043e\u043c \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0445 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439"
+}

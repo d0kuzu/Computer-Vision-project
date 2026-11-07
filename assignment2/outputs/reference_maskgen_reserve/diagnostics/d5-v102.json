@@ -1,0 +1,50 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 2,
+    "erosion_mix": 1.0
+  },
+  "seed": 105102,
+  "mask_indices": [
+    9,
+    44,
+    46,
+    49,
+    62
+  ],
+  "original_codes": [
+    1570,
+    7976,
+    534,
+    201,
+    381
+  ],
+  "replacement_codes": [
+    1045,
+    42,
+    1569,
+    813,
+    55
+  ],
+  "changed_code_count": 5,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.4568861722946167,
+  "changed_pixels": 10636,
+  "max_pixel_change": 48,
+  "sample_id": "d5-v102",
+  "source_relative_path": "5/mnist_train_43189.png",
+  "source_sha256": "68a8089a05e29bf0045882a2df8146f59edcd0aacdcbd8889e2f666ea9ccaef4",
+  "source_index": 43189,
+  "variant": 102,
+  "control_variant": 4,
+  "replaces": "d5-v056",
+  "replaces_sha256": "5034238e70a7e448a431b0d8678a5ec864b1ad3ed32196e6710b14f26e7b65c5",
+  "replacement_reason": "A long top bar meets an angled stem ending on the left. Both images lack the lower bowl of a five.",
+  "sha256": "47a4ced394100ea0fb875876e62306840d328ef5ac474ff073b7503a90b43d1e"
+}

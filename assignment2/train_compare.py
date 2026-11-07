@@ -261,7 +261,7 @@ def train_variant(name, original, train, val, plan, seed, synthetic=None):
     return model.eval(), selected, history
 
 
-def plot_history(path, history, names):
+def plot_history(path, history, names, synthetic_label="Reviewed synthetic treatment"):
     image = Image.new("RGB", (1050, 500), "white")
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default(size=16)
@@ -289,7 +289,7 @@ def plot_history(path, history, names):
     for i, name in enumerate(names):
         x = 70 + i*320
         draw.line((x, 464, x+28, 464), fill=colors[name], width=3)
-        draw.text((x+37, 464), {"control":"Real replay control", "synthetic":"Reviewed synthetic treatment"}[name], "#273742", font=font, anchor="lm")
+        draw.text((x+37, 464), {"control":"Real replay control", "synthetic":synthetic_label}[name], "#273742", font=font, anchor="lm")
     image.save(path)
 
 

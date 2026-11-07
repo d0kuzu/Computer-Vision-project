@@ -1,0 +1,59 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 3,
+    "erosion_mix": 0.7
+  },
+  "seed": 100101,
+  "mask_indices": [
+    0,
+    30,
+    73,
+    89,
+    95,
+    103,
+    106,
+    115
+  ],
+  "original_codes": [
+    478,
+    5560,
+    1233,
+    1092,
+    998,
+    611,
+    7467,
+    1656
+  ],
+  "replacement_codes": [
+    60,
+    4650,
+    8178,
+    615,
+    6694,
+    203,
+    8036,
+    5272
+  ],
+  "changed_code_count": 8,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.9870848655700684,
+  "changed_pixels": 13802,
+  "max_pixel_change": 64,
+  "sample_id": "d0-v101",
+  "source_relative_path": "0/mnist_train_59319.png",
+  "source_sha256": "99732bcd958a4be59e8072974b105f5d83b2aecc49e2879366bbbafdffb7b70a",
+  "source_index": 59319,
+  "variant": 101,
+  "control_variant": 3,
+  "replaces": "d0-v063",
+  "replaces_sha256": "d100b5a1d32c2e522c816e74baf3800ed7a1a11f895c3daaa6de5d2cdc42d969",
+  "replacement_reason": "The upper endpoint curves inward into a lower loop and the long outside stroke forms a six in both images.",
+  "sha256": "08866baeff79a1c788fa16fd5aa22c41d0c47793d2d9865db73e0417f7d42c0f"
+}

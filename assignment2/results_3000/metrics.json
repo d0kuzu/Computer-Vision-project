@@ -1,0 +1,704 @@
+{
+  "status": "complete",
+  "selected_model": "control",
+  "classes": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "seed": 42,
+  "epochs": 5,
+  "selection": "Maximum real validation macro-F1, then lowest real validation cross-entropy. Within an arm exact ties use the earliest epoch. Across models exact ties use A1, prior_120, control, synthetic order.",
+  "optimizer": "Adam",
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "torch_version": "2.6.0+cpu",
+  "threads": 1,
+  "batch_size": 48,
+  "real_batch_slots": 28,
+  "extra_batch_slots": 20,
+  "optimizer_steps_per_epoch": 50,
+  "optimizer_steps_per_arm": 250,
+  "control": "The 1,000 extra slots replay the exact A1 train reference for each synthetic variant in the same order.",
+  "real_sizes": {
+    "train": 1400,
+    "val": 300,
+    "test": 300
+  },
+  "synthetic_in_training": 1000,
+  "expanded_train_size": 2400,
+  "dataset_size": 3000,
+  "a1_checkpoint_sha256": "a9abd0206458b64cc07af067d0ccacd1996633e5f8b08fcb8b731c382e552873",
+  "mnist_manifest_sha256": "2ed13437881dbf60efbc1153dd4f8053485e2d259b3ca184b852d4487cbbf14a",
+  "dataset": {
+    "method": "reference_masked_tokens_v1",
+    "reference_sources": 1000,
+    "run": "synthetic_1000",
+    "run_sha256": "9caa7b3d88839faa2b51d27c1e811945a38e83874f040ed876acbaf13bae3d89",
+    "manifest_sha256": "7421915315c65b244f6f8c54c40ac0877185d6f3e1f0edd35d4799f442564a71",
+    "review_sha256": "2ba5d2f672bd44a1f8595bffc02b717d8dc6539753d9edab2dfbaca5a8b78b03",
+    "dataset_index_sha256": "b99e2c9ef6491a5eed328d6d4cafc51620b0f4f9eda85d42d2c1f45da28359e8",
+    "quality_replacements": 24,
+    "label_sources": {
+      "user_batch_review": 120,
+      "inherited_a1_train": 880
+    },
+    "retained_per_source_run": {
+      "reference_maskgen_cadcae3f15d2": 120,
+      "reference_maskgen_extension_880": 856,
+      "reference_maskgen_reserve": 24
+    },
+    "training_labels_per_digit": {
+      "0": 100,
+      "1": 100,
+      "2": 100,
+      "3": 100,
+      "4": 100,
+      "5": 100,
+      "6": 100,
+      "7": 100,
+      "8": 100,
+      "9": 100
+    }
+  },
+  "models": {
+    "a1": {
+      "epoch": 0,
+      "validation": {
+        "loss": 0.10333849489688873,
+        "n": 300,
+        "accuracy": 0.9733333333333334,
+        "macro_f1": 0.9737476459510358
+      },
+      "training_originals_by_source": {
+        "real": 1400,
+        "synthetic": 0
+      },
+      "test": {
+        "loss": 0.048048779368400574,
+        "n": 300,
+        "accuracy": 0.9833333333333333,
+        "macro_f1": 0.983537712515296,
+        "correct": 295,
+        "confusion_matrix": [
+          [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      },
+      "checkpoint": "assignment1/results/cnn.pt",
+      "checkpoint_relative_to": "repository root",
+      "checkpoint_sha256": "a9abd0206458b64cc07af067d0ccacd1996633e5f8b08fcb8b731c382e552873"
+    },
+    "prior_120": {
+      "epoch": 2,
+      "validation": {
+        "loss": 0.12716872990131378,
+        "n": 300,
+        "accuracy": 0.9766666666666667,
+        "macro_f1": 0.9764934704084469
+      },
+      "training_originals_by_source": {
+        "real": 1400,
+        "synthetic": 120
+      },
+      "test": {
+        "loss": 0.028832724317908287,
+        "n": 300,
+        "accuracy": 0.9866666666666667,
+        "macro_f1": 0.9867714149987901,
+        "correct": 296,
+        "confusion_matrix": [
+          [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      },
+      "checkpoint": "assignment2/results/cnn_a2.pt",
+      "checkpoint_relative_to": "repository root",
+      "checkpoint_sha256": "fc7e2945046ea1c66a73891ffa9d7790d7a1c678a14c31d1f3f2d134b12593ea"
+    },
+    "control": {
+      "epoch": 1,
+      "validation": {
+        "loss": 0.11569541692733765,
+        "n": 300,
+        "accuracy": 0.9766666666666667,
+        "macro_f1": 0.9764934704084469
+      },
+      "training_originals_by_source": {
+        "real": 1400,
+        "synthetic": 0
+      },
+      "source_draws_per_epoch": {
+        "real_original": 1400,
+        "real_replay": 1000,
+        "synthetic": 0
+      },
+      "test": {
+        "loss": 0.030701087787747383,
+        "n": 300,
+        "accuracy": 0.9866666666666667,
+        "macro_f1": 0.9867714149987901,
+        "correct": 296,
+        "confusion_matrix": [
+          [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      },
+      "checkpoint": "cnn_control.pt",
+      "checkpoint_relative_to": "results directory",
+      "checkpoint_sha256": "6b094687333c03f9a2ae65edc8b6ab195127a39881079084a6fbb1ddd95c5335"
+    },
+    "synthetic": {
+      "epoch": 3,
+      "validation": {
+        "loss": 0.12808680534362793,
+        "n": 300,
+        "accuracy": 0.9733333333333334,
+        "macro_f1": 0.9731536476112973
+      },
+      "training_originals_by_source": {
+        "real": 1400,
+        "synthetic": 1000
+      },
+      "source_draws_per_epoch": {
+        "real_original": 1400,
+        "real_replay": 0,
+        "synthetic": 1000
+      },
+      "test": {
+        "loss": 0.0300874263048172,
+        "n": 300,
+        "accuracy": 0.9866666666666667,
+        "macro_f1": 0.9866610137554174,
+        "correct": 296,
+        "confusion_matrix": [
+          [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            28,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      },
+      "checkpoint": "cnn_a2_synthetic.pt",
+      "checkpoint_relative_to": "results directory",
+      "checkpoint_sha256": "cf1cfa4920ddaa2bcc8d561033262c689f91fe43b0c9eaefff642c0d1c29878d"
+    }
+  },
+  "paired_comparisons": {
+    "a1_to_prior_120": {
+      "fixed": 2,
+      "introduced": 1,
+      "both_correct": 294,
+      "both_wrong": 3
+    },
+    "a1_to_control": {
+      "fixed": 2,
+      "introduced": 1,
+      "both_correct": 294,
+      "both_wrong": 3
+    },
+    "a1_to_synthetic": {
+      "fixed": 3,
+      "introduced": 2,
+      "both_correct": 293,
+      "both_wrong": 2
+    },
+    "prior_120_to_control": {
+      "fixed": 0,
+      "introduced": 0,
+      "both_correct": 296,
+      "both_wrong": 4
+    },
+    "prior_120_to_synthetic": {
+      "fixed": 1,
+      "introduced": 1,
+      "both_correct": 295,
+      "both_wrong": 3
+    },
+    "control_to_synthetic": {
+      "fixed": 1,
+      "introduced": 1,
+      "both_correct": 295,
+      "both_wrong": 3
+    }
+  },
+  "checkpoint_sha256": "6b094687333c03f9a2ae65edc8b6ab195127a39881079084a6fbb1ddd95c5335",
+  "reloaded_predictions_match": true,
+  "archived_test_predictions_match": true
+}

@@ -1,0 +1,52 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "rotation",
+    "rotation_ccw_degrees": 8
+  },
+  "seed": 108101,
+  "mask_indices": [
+    12,
+    74,
+    87,
+    89,
+    92,
+    107
+  ],
+  "original_codes": [
+    2665,
+    4577,
+    3130,
+    6300,
+    6286,
+    1036
+  ],
+  "replacement_codes": [
+    5170,
+    7595,
+    2655,
+    4234,
+    6417,
+    1204
+  ],
+  "changed_code_count": 6,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.731266736984253,
+  "changed_pixels": 14511,
+  "max_pixel_change": 63,
+  "sample_id": "d8-v101",
+  "source_relative_path": "8/mnist_train_02026.png",
+  "source_sha256": "1952921eca8b6e45620df327ea3e4d1611b28a128e3370786446e585c017df82",
+  "source_index": 2026,
+  "variant": 101,
+  "control_variant": 10,
+  "replaces": "d8-v014",
+  "replaces_sha256": "2159ee26c04e7aeb353b33d46f9154ab45f711f254243b77242080b51c372518",
+  "replacement_reason": "One upper loop and a straight, thick descender give the source and derivative the appearance of a nine.",
+  "sha256": "98fe42b32d82ffe0fe927f6242d877d61a6d617a3416ffab476a2cece847140e"
+}

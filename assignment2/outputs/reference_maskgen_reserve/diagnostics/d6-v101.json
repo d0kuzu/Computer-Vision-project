@@ -1,0 +1,47 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 1,
+    "erosion_mix": 0.8
+  },
+  "seed": 106101,
+  "mask_indices": [
+    12,
+    53,
+    85,
+    123
+  ],
+  "original_codes": [
+    956,
+    5264,
+    1644,
+    381
+  ],
+  "replacement_codes": [
+    7590,
+    5559,
+    4660,
+    895
+  ],
+  "changed_code_count": 4,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.9171464443206787,
+  "changed_pixels": 8893,
+  "max_pixel_change": 39,
+  "sample_id": "d6-v101",
+  "source_relative_path": "6/mnist_train_30856.png",
+  "source_sha256": "cc2b3f287dd52515cfe152f9724b1b1ade160d2d12b7e22c1222135f747a053b",
+  "source_index": 30856,
+  "variant": 101,
+  "control_variant": 1,
+  "replaces": "d6-v013",
+  "replaces_sha256": "4fd012a03de8d6db09600e1db26a1f76599d3124d9e546e3bbdba94a9e3c69da",
+  "replacement_reason": "The A1 source and its derivative form an L-shaped stroke with no distinguishable lower loop to identify a six.",
+  "sha256": "370a42e5bb61d8aebb5aad3dfecb363e75de55f2c1766f5abafd55d5aee21897"
+}

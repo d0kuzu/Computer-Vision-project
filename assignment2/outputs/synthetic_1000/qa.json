@@ -1,0 +1,418 @@
+{
+  "originals": 2000,
+  "synthetic": 1000,
+  "previous_synthetic": 120,
+  "additional_synthetic": 880,
+  "raw_synthetic_candidates": 1024,
+  "reserve_generated": 24,
+  "quality_exclusions": [
+    {
+      "excluded": "d0-v063",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d0-v063.png",
+      "excluded_sha256": "d100b5a1d32c2e522c816e74baf3800ed7a1a11f895c3daaa6de5d2cdc42d969",
+      "selected": "d0-v101",
+      "selected_png": "reference_maskgen_reserve/candidates/d0-v101.png",
+      "selected_sha256": "08866baeff79a1c788fa16fd5aa22c41d0c47793d2d9865db73e0417f7d42c0f",
+      "reason": "The upper endpoint curves inward into a lower loop and the long outside stroke forms a six in both images."
+    },
+    {
+      "excluded": "d0-v077",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d0-v077.png",
+      "excluded_sha256": "13310f4d1467a5d40530662852386517dd7c2ff9e670308be1b593c3ff05ecac",
+      "selected": "d0-v102",
+      "selected_png": "reference_maskgen_reserve/candidates/d0-v102.png",
+      "selected_sha256": "76f334f10e2dcb0df3a5f233cbd0ab7479a577dafd76dbcd57d1c85a4af6e866",
+      "reason": "A long open U on the left and a closed oval on the right give both images the appearance of a connected 10."
+    },
+    {
+      "excluded": "d0-v097",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d0-v097.png",
+      "excluded_sha256": "3f59149bbdf26928d9cfa10fef44f40eaec956cbb0d26bfd6623414389d25718",
+      "selected": "d0-v103",
+      "selected_png": "reference_maskgen_reserve/candidates/d0-v103.png",
+      "selected_sha256": "e9e364664db277fa6ddda883992f73c70820eca2adc40d84333e597dd40f7e2e",
+      "reason": "An interior diagonal stroke divides the oval into two separate openings, giving the source and derivative the shape of a slanted eight."
+    },
+    {
+      "excluded": "d2-v066",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d2-v066.png",
+      "excluded_sha256": "70b96dacae0d0f4349311b153421dea6702c04912ac309626862ba6b3dd8401f",
+      "selected": "d2-v101",
+      "selected_png": "reference_maskgen_reserve/candidates/d2-v101.png",
+      "selected_sha256": "cf57b009c2f1d485107917f44be57965ba4e9821a0fc0ad8f8533cb19b0735e2",
+      "reason": "A single upward-curving horizontal stroke ends in a small hook on the right. Neither image has a discernible diagonal or base to identify a two."
+    },
+    {
+      "excluded": "d2-v084",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d2-v084.png",
+      "excluded_sha256": "81b4d4e314a2b4dc7bb7faa8af6cef3a533f8e038e85fc77523113d769de3fd2",
+      "selected": "d2-v102",
+      "selected_png": "reference_maskgen_reserve/candidates/d2-v102.png",
+      "selected_sha256": "352233d555d298fa24d61394f3689b2b5438b83537d6ca50009236e91a1f5ffa",
+      "reason": "A large closed upper oval with a tiny lower-left knot and a sweeping tail gives both glyphs the shape of a capital Q."
+    },
+    {
+      "excluded": "d5-v015",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d5-v015.png",
+      "excluded_sha256": "d92a7c597b971cde7d6ab8661d1d2ba119cde6d528740efd1158f123e12e6021",
+      "selected": "d5-v101",
+      "selected_png": "reference_maskgen_reserve/candidates/d5-v101.png",
+      "selected_sha256": "6649d40454c730bcc4ba4343d9d0a125ccbafa37a3ce5577f9a9b38ed2a6f9cc",
+      "reason": "Both the source and the derivative form a two-segment angled mark with a long upper bar and no lower bowl to identify a five."
+    },
+    {
+      "excluded": "d5-v056",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d5-v056.png",
+      "excluded_sha256": "5034238e70a7e448a431b0d8678a5ec864b1ad3ed32196e6710b14f26e7b65c5",
+      "selected": "d5-v102",
+      "selected_png": "reference_maskgen_reserve/candidates/d5-v102.png",
+      "selected_sha256": "47a4ced394100ea0fb875876e62306840d328ef5ac474ff073b7503a90b43d1e",
+      "reason": "A long top bar meets an angled stem ending on the left. Both images lack the lower bowl of a five."
+    },
+    {
+      "excluded": "d5-v060",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d5-v060.png",
+      "excluded_sha256": "86ba50fe989f17f4e63a63c66c72803d62a887ce53aa2f4e8de814411ad6eb8c",
+      "selected": "d5-v103",
+      "selected_png": "reference_maskgen_reserve/candidates/d5-v103.png",
+      "selected_sha256": "33a04e94dd4a87954583e84fdc98a33b4ae8f84dd60789bfd0296df3896b905b",
+      "reason": "A straight vertical stem and a left-facing bottom hook form a J or integral sign in both images."
+    },
+    {
+      "excluded": "d5-v078",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d5-v078.png",
+      "excluded_sha256": "f816d518c57ba7f66a68bb405dde9aac97d74b9964b52ee0114d7dd45b515eaf",
+      "selected": "d5-v104",
+      "selected_png": "reference_maskgen_reserve/candidates/d5-v104.png",
+      "selected_sha256": "62ae42b2f0dbf98f94c6019d5a8b6e1ad215563b8181a843086c0b40fcf2109a",
+      "reason": "A straight upper stroke runs into one small closed lower-left oval. The resulting shape resembles a slanted six."
+    },
+    {
+      "excluded": "d5-v091",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d5-v091.png",
+      "excluded_sha256": "76a7bde92da89fb5adb1a7a5bab36c6c7449b65de80b62475b5eef53eaafa415",
+      "selected": "d5-v105",
+      "selected_png": "reference_maskgen_reserve/candidates/d5-v105.png",
+      "selected_sha256": "ea9b25a94fad92097de941d4cb418d6c386451a3491da534f4ba1c5232940057",
+      "reason": "A long, nearly vertical stem connects short hooks pointing in opposite directions. Both images resemble an integral sign."
+    },
+    {
+      "excluded": "d6-v013",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d6-v013.png",
+      "excluded_sha256": "4fd012a03de8d6db09600e1db26a1f76599d3124d9e546e3bbdba94a9e3c69da",
+      "selected": "d6-v101",
+      "selected_png": "reference_maskgen_reserve/candidates/d6-v101.png",
+      "selected_sha256": "370a42e5bb61d8aebb5aad3dfecb363e75de55f2c1766f5abafd55d5aee21897",
+      "reason": "The A1 source and its derivative form an L-shaped stroke with no distinguishable lower loop to identify a six."
+    },
+    {
+      "excluded": "d6-v041",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d6-v041.png",
+      "excluded_sha256": "c3507c9202fd34bd71d44c01279aecf23d4230728db9bd055d3b184a85a3b9a1",
+      "selected": "d6-v102",
+      "selected_png": "reference_maskgen_reserve/candidates/d6-v102.png",
+      "selected_sha256": "ac80cce51e4eb1edbca3b939a7bbd64a8503ecff1a41aa12f662731fbf867d4e",
+      "reason": "The heavy stroke forms an open sideways angle with a solid lower arm. Both images lack a distinguishable lower loop."
+    },
+    {
+      "excluded": "d6-v062",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d6-v062.png",
+      "excluded_sha256": "13c5fea468b1c86fad232f59c0cead62f4a1d3cbfe490ef012dc55242cbc5d68",
+      "selected": "d6-v103",
+      "selected_png": "reference_maskgen_reserve/candidates/d6-v103.png",
+      "selected_sha256": "9a4b187dbe8d31836809d265cbd2a363151b54d0f3fd3d2e77338d3b4cc21a1f",
+      "reason": "One open U-shaped stroke remains in both images, without a closed or returning lower stroke characteristic of six."
+    },
+    {
+      "excluded": "d6-v069",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d6-v069.png",
+      "excluded_sha256": "976f23f71f680aa1939c5b68d2ee6bfb62067735c6479a67e63ae0a5b9a25a0e",
+      "selected": "d6-v104",
+      "selected_png": "reference_maskgen_reserve/candidates/d6-v104.png",
+      "selected_sha256": "cd6517fa056bbc8bbdc2bb4d13dd3fbd82a8812de8ce4517d69ca05823f6c123",
+      "reason": "A thick forked stem forms an r-shaped silhouette in both images, without a returning lower stroke or loop to identify a six."
+    },
+    {
+      "excluded": "d8-v014",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d8-v014.png",
+      "excluded_sha256": "2159ee26c04e7aeb353b33d46f9154ab45f711f254243b77242080b51c372518",
+      "selected": "d8-v101",
+      "selected_png": "reference_maskgen_reserve/candidates/d8-v101.png",
+      "selected_sha256": "98fe42b32d82ffe0fe927f6242d877d61a6d617a3416ffab476a2cece847140e",
+      "reason": "One upper loop and a straight, thick descender give the source and derivative the appearance of a nine."
+    },
+    {
+      "excluded": "d8-v020",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d8-v020.png",
+      "excluded_sha256": "a2a27ae91e4461bae8f181890584dc08b1c977d06cd89c1fa34c67c5b73de4fb",
+      "selected": "d8-v102",
+      "selected_png": "reference_maskgen_reserve/candidates/d8-v102.png",
+      "selected_sha256": "32f1ba4625d3b40a5cd3fad838cc0c1714be9f7fcd42290f88d1676a1461f511",
+      "reason": "A single upper loop and a straight lower stem form a nine in both images."
+    },
+    {
+      "excluded": "d8-v021",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d8-v021.png",
+      "excluded_sha256": "46e3887b6360957dcadd9f77ab9d7b19e758d421454efe4d5ab3f6732653049e",
+      "selected": "d8-v103",
+      "selected_png": "reference_maskgen_reserve/candidates/d8-v103.png",
+      "selected_sha256": "3f4562d675f83339b459613c555e6a7e71b1a6d199143c9110a702c9972295c4",
+      "reason": "A closed lower loop and an open upper hook give both images the shape of a six."
+    },
+    {
+      "excluded": "d8-v031",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d8-v031.png",
+      "excluded_sha256": "bfd912276fc63104c82f8e39bb5ce0e2b60c8a1c8c05e1a2017dc081f56b52ca",
+      "selected": "d8-v104",
+      "selected_png": "reference_maskgen_reserve/candidates/d8-v104.png",
+      "selected_sha256": "d44b1d6f65ae5d66da7d3c408d1154ef531baf86caef30c41207bc342ad5d0c5",
+      "reason": "The pair shows an open hook with one long diagonal descender and no lower loop or second lobe to identify an eight."
+    },
+    {
+      "excluded": "d8-v053",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d8-v053.png",
+      "excluded_sha256": "fcb6a175acf851c3bd51f8e68a24a348a27eebd6c0ac2ea502b0d66df5d37079",
+      "selected": "d8-v105",
+      "selected_png": "reference_maskgen_reserve/candidates/d8-v105.png",
+      "selected_sha256": "c42916e4c6889b3293ef82c75101067846bdf52ddc207b57f7b15a0bab1acf8c",
+      "reason": "Nearly solid ink with a branched top and a drop-shaped bottom obscures the two lobes of an eight in both images."
+    },
+    {
+      "excluded": "d8-v060",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d8-v060.png",
+      "excluded_sha256": "77a123d65dfa6a3726e2ec4ef06bfeb1b3f916a7116a0094f544069706616d49",
+      "selected": "d8-v106",
+      "selected_png": "reference_maskgen_reserve/candidates/d8-v106.png",
+      "selected_sha256": "412b307da43e0b705dc29ce910d9aeae0562af6d271db95017cac6723b2cc452",
+      "reason": "A single upper loop with a diagonal tail forms the shape of a nine. Both images lack the lower loop of an eight."
+    },
+    {
+      "excluded": "d8-v089",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d8-v089.png",
+      "excluded_sha256": "2b14c2cccfdecb2371b6ef31c1d8a5a91856cba2f46e5f30c811ed4440908c3e",
+      "selected": "d8-v107",
+      "selected_png": "reference_maskgen_reserve/candidates/d8-v107.png",
+      "selected_sha256": "822b63ee8b0eaed103e21de9de6b6a426710c729a60a3c3f218a7b00c17df2e3",
+      "reason": "A single upper loop crosses into two short splayed ends at the bottom. The missing lower lobe leaves a ribbon-shaped glyph."
+    },
+    {
+      "excluded": "d8-v098",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d8-v098.png",
+      "excluded_sha256": "5c4fc32789eedcedb9555f817901fb19b7262d2886afc7b9369c8f3205a76be4",
+      "selected": "d8-v108",
+      "selected_png": "reference_maskgen_reserve/candidates/d8-v108.png",
+      "selected_sha256": "a6b9b85f70900407e91b1d22266ddfdd961bdefeca74a304dc4f0ddc06bec009",
+      "reason": "A solid curved upper stem runs into a single closed lower loop. Both images read as a six."
+    },
+    {
+      "excluded": "d9-v043",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d9-v043.png",
+      "excluded_sha256": "03c3bc51d932b4d704be0f1e279a14f2c77e55d7e3319af36398a83dda85d463",
+      "selected": "d9-v101",
+      "selected_png": "reference_maskgen_reserve/candidates/d9-v101.png",
+      "selected_sha256": "cf5692b53a01c095583666b91a3f20257ca3ceeea0991dee2f7d50e4136f6e68",
+      "reason": "A solid horizontal cap curves into a descending diagonal, giving both images the silhouette of a seven with no distinguishable loop for nine."
+    },
+    {
+      "excluded": "d9-v058",
+      "excluded_png": "reference_maskgen_extension_880/candidates/d9-v058.png",
+      "excluded_sha256": "560fd63c7529ffde2753099bfbc9b5d5610267ac38ec08c577fdc84249717328",
+      "selected": "d9-v102",
+      "selected_png": "reference_maskgen_reserve/candidates/d9-v102.png",
+      "selected_sha256": "a3732249a02061f86e9f1c21270fbddc795b56ad1c8317330fd4180b7b94fda2",
+      "reason": "A solid angled cap meets a straight descending stroke in both images, producing the silhouette of a serif one."
+    }
+  ],
+  "counts_by_label_source": {
+    "published_mnist": 2000,
+    "user_batch_review": 120,
+    "inherited_a1_train": 880
+  },
+  "total": 3000,
+  "train": 2400,
+  "validation": 300,
+  "test": 300,
+  "train_synthetic_fraction": 0.4166666666666667,
+  "all_synthetic_fraction": 0.3333333333333333,
+  "by_digit": {
+    "0": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "1": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "2": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "3": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "4": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "5": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "6": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "7": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "8": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    },
+    "9": {
+      "originals": 200,
+      "prior_synthetic": 12,
+      "new_synthetic": 88,
+      "train": 240,
+      "val": 30,
+      "test": 30
+    }
+  },
+  "unique_encoded_pngs": 3000,
+  "unique_decoded_grayscale_images": 3000,
+  "unique_input32": 3000,
+  "unique_a1_train_references": 1000,
+  "references_from_validation_or_test": 0,
+  "cross_split_exact_input32_duplicates": 0,
+  "visual_screening": "All raw extension pairs and reserve outputs inspected side by side with their A1 train source. Severe ambiguity recorded in quality_reserve.csv. Ordinary handwriting variation retained. No classifier predictions used for selection.",
+  "overlap_scope": "Source IDs, encoded PNGs, decoded grayscale pixels and normalized inputs were checked for exact overlap. Repeated handwriting styles and near-duplicates can still occur.",
+  "label_policy": {
+    "user_batch_review": "Earlier 120 accepted as a group for train only.",
+    "inherited_a1_train": "New 880 use their A1 train source labels and verified generated pixels. No individual human annotation."
+  },
+  "file_paths": "dataset_index.csv relative to repository root; synthetic manifest.csv relative to assignment2/outputs.",
+  "input32_hash": "SHA-256 of grayscale uint8 A1-preprocessed 32x32 pixel bytes before division by 255.",
+  "shape_check": "Black-mask IoU at gray < 128 against each digit's styled source before the model residual.",
+  "shape_iou_min": 0.8400583373845406,
+  "shape_iou_median": 0.9831751537822675,
+  "ten_lowest_shape_iou": [
+    {
+      "sample_id": "d9-v03",
+      "iou": 0.8400583373845406
+    },
+    {
+      "sample_id": "d8-v019",
+      "iou": 0.8933280063923292
+    },
+    {
+      "sample_id": "d4-v068",
+      "iou": 0.9050086355785838
+    },
+    {
+      "sample_id": "d4-v072",
+      "iou": 0.9187321258341278
+    },
+    {
+      "sample_id": "d9-v096",
+      "iou": 0.9280851806598011
+    },
+    {
+      "sample_id": "d5-v031",
+      "iou": 0.9294538361508452
+    },
+    {
+      "sample_id": "d1-v015",
+      "iou": 0.9296205630354957
+    },
+    {
+      "sample_id": "d8-v025",
+      "iou": 0.9304672897196262
+    },
+    {
+      "sample_id": "d4-v060",
+      "iou": 0.9318852239206221
+    },
+    {
+      "sample_id": "d4-v019",
+      "iou": 0.9330366603093876
+    }
+  ],
+  "max_observed_gray_change": 64,
+  "min_changed_tokens": 4,
+  "source_runs": [
+    {
+      "run": "reference_maskgen_cadcae3f15d2",
+      "samples": 120,
+      "method": "reference_masked_tokens_v1",
+      "run_sha256": "e6d39fe2ad515d1bec72da317e752e3dd644ea6a1d4366ce65714486946012c1",
+      "manifest_sha256": "d801f0043fe0e7b738f4d2fddf67c234709f1c2baa92816acaad36ee4d44a247",
+      "review_sha256": "28ddd06d2c9ce6bbcd1ebe934ca5e4ac39d20c500daeb0f5a8f9362c08d2c741"
+    },
+    {
+      "run": "reference_maskgen_extension_880",
+      "samples": 880,
+      "method": "reference_masked_tokens_v1",
+      "run_sha256": "38dabd81deb9f4e53a476a99484c49b299590ae26ff7b27c46823d34e31aaf02",
+      "manifest_sha256": "7fcd8613cd66df982ddd44a8e22993f8972e1bed57838904bbc4b026bd86cd8d",
+      "review_sha256": "557ca3a1136e39bf43f76838b65fe3b3a3ba33c642f13f4510e82c885f7783b8"
+    },
+    {
+      "run": "reference_maskgen_reserve",
+      "samples": 24,
+      "method": "reference_masked_tokens_v1",
+      "run_sha256": "e645b44f50c15ab1fa116907fc35a3b1bcb5a1ba879120d1be7a65a41035237a",
+      "manifest_sha256": "2791b1c88b46c9630355791414157e6b1aaa7cf2717a4b1c1d8b279beba441c2",
+      "review_sha256": "743437e8001608c1e60588ab98df7b6b1278d76e3bc9167f90fcfdd7bcacdc59"
+    }
+  ],
+  "gallery_png_sha256": {
+    "digit-0.png": "95e9671798f28858ae8c4faeceb1403937961a75d4552bea2fbf813da3b1dd85",
+    "digit-1.png": "643a773080f0f1b59fdd76eea4915a9191e7327ca56daf808545d08d74a93541",
+    "digit-2.png": "d15450700c273d8123a07b4878e8974f4d7d6ada95b50a950def2916b3068fed",
+    "digit-3.png": "c28ab1e94b86c754fe403c8fc8b5cad1ebd0a90d2234e97ec095b88b7ac7ebaa",
+    "digit-4.png": "3646e95247fb14a2028bb7837ee89fb32bebd13e00a2bc4849fa23744b48c844",
+    "digit-5.png": "13087fdabba90c6d65999a866c5bb55bc9a49319e033b4f27074f1941eaa71b1",
+    "digit-6.png": "2b61e1ee390954a95c2dc5fe9e862892d49171155e1963bfee67d49579ac73bc",
+    "digit-7.png": "fe192352d894ea7ad7a326bf6f27d4b672265dc738ae5c8b589ec374da5e0c4f",
+    "digit-8.png": "a247776001ea1298be3d38083243ad1ca6f75d8db9d1ecb6ccc9b24dc0da7b5c",
+    "digit-9.png": "d20e9eead06d00ef55815d25070d30ce050eaeb5c3a61559923a1cbc6fc5f32f"
+  }
+}

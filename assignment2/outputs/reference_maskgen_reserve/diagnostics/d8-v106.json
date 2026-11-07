@@ -1,0 +1,50 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "marker-bleed",
+    "dilation_radius_px": 4,
+    "blur_sigma_px": 1.15
+  },
+  "seed": 108106,
+  "mask_indices": [
+    30,
+    51,
+    66,
+    106,
+    111
+  ],
+  "original_codes": [
+    1631,
+    43,
+    5563,
+    1573,
+    7413
+  ],
+  "replacement_codes": [
+    1597,
+    854,
+    1654,
+    814,
+    956
+  ],
+  "changed_code_count": 5,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.3455779552459717,
+  "changed_pixels": 9344,
+  "max_pixel_change": 63,
+  "sample_id": "d8-v106",
+  "source_relative_path": "8/mnist_train_42736.png",
+  "source_sha256": "81d1e4671cb3fb03d3a70c399b5eeaa86e7c032721b6fa5d96b05ad0633d473a",
+  "source_index": 42736,
+  "variant": 106,
+  "control_variant": 8,
+  "replaces": "d8-v060",
+  "replaces_sha256": "77a123d65dfa6a3726e2ec4ef06bfeb1b3f916a7116a0094f544069706616d49",
+  "replacement_reason": "A single upper loop with a diagonal tail forms the shape of a nine. Both images lack the lower loop of an eight.",
+  "sha256": "412b307da43e0b705dc29ce910d9aeae0562af6d271db95017cac6723b2cc452"
+}

@@ -1,0 +1,58 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "rotation",
+    "rotation_ccw_degrees": -14
+  },
+  "seed": 105101,
+  "mask_indices": [
+    32,
+    45,
+    46,
+    49,
+    72,
+    73,
+    77,
+    92
+  ],
+  "original_codes": [
+    5440,
+    7832,
+    1468,
+    1435,
+    6361,
+    1563,
+    1573,
+    5142
+  ],
+  "replacement_codes": [
+    4497,
+    1179,
+    1631,
+    690,
+    161,
+    201,
+    1305,
+    5700
+  ],
+  "changed_code_count": 8,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.9460158348083496,
+  "changed_pixels": 6778,
+  "max_pixel_change": 64,
+  "sample_id": "d5-v101",
+  "source_relative_path": "5/mnist_train_29870.png",
+  "source_sha256": "b1f1d35b4f7e4a2b7a5398c057943b31ed77683931ad09f777640af8c03190d2",
+  "source_index": 29870,
+  "variant": 101,
+  "control_variant": 11,
+  "replaces": "d5-v015",
+  "replaces_sha256": "d92a7c597b971cde7d6ab8661d1d2ba119cde6d528740efd1158f123e12e6021",
+  "replacement_reason": "Both the source and the derivative form a two-segment angled mark with a long upper bar and no lower bowl to identify a five.",
+  "sha256": "6649d40454c730bcc4ba4343d9d0a125ccbafa37a3ce5577f9a9b38ed2a6f9cc"
+}

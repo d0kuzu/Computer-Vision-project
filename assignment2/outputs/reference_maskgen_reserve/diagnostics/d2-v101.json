@@ -1,0 +1,53 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 2,
+    "erosion_mix": 0.85
+  },
+  "seed": 102101,
+  "mask_indices": [
+    32,
+    43,
+    45,
+    94,
+    99,
+    121
+  ],
+  "original_codes": [
+    295,
+    6301,
+    1597,
+    1656,
+    956,
+    753
+  ],
+  "replacement_codes": [
+    1569,
+    1644,
+    1569,
+    5001,
+    1053,
+    143
+  ],
+  "changed_code_count": 6,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.1328959465026855,
+  "changed_pixels": 6052,
+  "max_pixel_change": 52,
+  "sample_id": "d2-v101",
+  "source_relative_path": "2/mnist_train_39487.png",
+  "source_sha256": "ede1ef450a6df0c008ff7f1b3a6c93023055cd485727f85bbf54b77100c4753b",
+  "source_index": 39487,
+  "variant": 101,
+  "control_variant": 2,
+  "replaces": "d2-v066",
+  "replaces_sha256": "70b96dacae0d0f4349311b153421dea6702c04912ac309626862ba6b3dd8401f",
+  "replacement_reason": "A single upward-curving horizontal stroke ends in a small hook on the right. Neither image has a discernible diagonal or base to identify a two.",
+  "sha256": "cf57b009c2f1d485107917f44be57965ba4e9821a0fc0ad8f8533cb19b0735e2"
+}

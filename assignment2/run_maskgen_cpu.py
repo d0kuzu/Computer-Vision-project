@@ -8,7 +8,6 @@ whose filenames are arranged as COMPONENT/HUB_REVISION/FILENAME.
 import argparse
 import ast
 from contextlib import contextmanager
-import gc
 import hashlib
 import json
 import os
@@ -17,14 +16,11 @@ import subprocess
 import sys
 import time
 
+from cpu_maskgen_models import load_models
+
 
 PROJECT = Path(__file__).resolve().parent
 NOTEBOOK = PROJECT / "01_generate_digits_maskgen_colab.ipynb"
-WEIGHT_DIGESTS = {
-    "maskgen": "7021e110ee7d28fe34da72abcce6aa8f882d23f50d978bc7a41b95a2fed568d3",
-    "tatitok": "4b7b4a6661285d6fb56565061712914a1458d39779f0d5a17f7ed87648f3f196",
-    "clip": "fbc415c3d0d7b79faed8f5ccfb740c32b7c4f5ffe7283b851f89c6231c01a8e0",
-}
 
 
 @contextmanager
@@ -106,55 +102,8 @@ def main():
     with run_lock(run_dir / ".cpu.lock"):
         missing = [item for item in selected if not state["complete_candidate"](item)]
         if missing:
-            import open_clip
-            from huggingface_hub import hf_hub_download
-            from safetensors.torch import load_file
-            from modeling.maskgen import MaskGen_VQ
-            from modeling.tatitok import TATiTok
-
-            def weight_file(component, name):
-                repository, revision = state["WEIGHTS"][component]
-                if args.weights_dir:
-                    path = args.weights_dir / component / revision / name
-                else:
-                    path = Path(hf_hub_download(repo_id=repository, revision=revision, filename=name))
-                if name.endswith(".safetensors"):
-                    with path.open("rb") as f:
-                        digest = hashlib.file_digest(f, "sha256").hexdigest()
-                    if digest != WEIGHT_DIGESTS[component]:
-                        raise ValueError(f"Invalid {component} checkpoint digest {digest}")
-                return path
-
-            def load_component(name, cls):
-                cfg = json.loads(weight_file(name, "config.json").read_text(encoding="utf-8"))
-                # Assign the published tensors directly to an empty model. This
-                # avoids a second multi-GB set of random parameters in RAM.
-                with torch.device("meta"):
-                    model = cls(cfg)
-                weights = load_file(str(weight_file(name, "model.safetensors")), device="cpu")
-                if name == "maskgen":
-                    weights["lm_head.weight"] = weights["embeddings.weight"]
-                model.load_state_dict(weights, assign=True, strict=True)
-                if name == "maskgen":
-                    model.lm_head.weight = model.embeddings.weight
-                assert all(t.device.type == "cpu" for t in (*model.parameters(), *model.buffers()))
-                return model.requires_grad_(False).eval()
-
-            print("Loading OpenCLIP text tower…", flush=True)
-            clip = open_clip.create_model("ViT-L-14-336", force_quick_gelu=True,
-                                         pretrained=str(weight_file("clip", "open_clip_model.safetensors")),
-                                         device="cpu")
-            del clip.visual
-            state["clip"] = clip.requires_grad_(False).eval()
-            state["text_tokenizer"] = open_clip.get_tokenizer("ViT-L-14-336")
-            print("Loading MaskGen-L VQ…", flush=True)
-            state["generator"] = load_component("maskgen", MaskGen_VQ)
-            print("Loading TA-TiTok BL128 VQ…", flush=True)
-            tokenizer = load_component("tatitok", TATiTok)
-            state["tokenizer"] = tokenizer
-            gc.collect()
-            assert state["generator"].image_seq_len == tokenizer.num_latent_tokens == 128
-            assert tokenizer.quantize_mode == "vq" and clip.transformer.batch_first
+            generator, tokenizer, clip, text_tokenizer, _ = load_models(args.weights_dir, state["WEIGHTS"])
+            state.update(generator=generator, tokenizer=tokenizer, clip=clip, text_tokenizer=text_tokenizer)
 
             for item in missing:
                 print("Generating", item["sample_id"], flush=True)

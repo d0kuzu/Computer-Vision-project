@@ -1,0 +1,59 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 3,
+    "erosion_mix": 0.7
+  },
+  "seed": 105105,
+  "mask_indices": [
+    13,
+    20,
+    27,
+    41,
+    43,
+    47,
+    107,
+    120
+  ],
+  "original_codes": [
+    7545,
+    2512,
+    4634,
+    217,
+    813,
+    1032,
+    2406,
+    30
+  ],
+  "replacement_codes": [
+    128,
+    7848,
+    1647,
+    10,
+    3082,
+    7860,
+    6300,
+    122
+  ],
+  "changed_code_count": 8,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 4.507531642913818,
+  "changed_pixels": 12063,
+  "max_pixel_change": 64,
+  "sample_id": "d5-v105",
+  "source_relative_path": "5/mnist_train_36609.png",
+  "source_sha256": "5eb29e0e8ae699622cbec65f07463eeeddabaf62c4ccb74fc6fd0024a00de454",
+  "source_index": 36609,
+  "variant": 105,
+  "control_variant": 3,
+  "replaces": "d5-v091",
+  "replaces_sha256": "76a7bde92da89fb5adb1a7a5bab36c6c7449b65de80b62475b5eef53eaafa415",
+  "replacement_reason": "A long, nearly vertical stem connects short hooks pointing in opposite directions. Both images resemble an integral sign.",
+  "sha256": "ea9b25a94fad92097de941d4cb418d6c386451a3491da534f4ba1c5232940057"
+}

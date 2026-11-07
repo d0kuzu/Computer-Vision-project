@@ -1,0 +1,52 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "rotation",
+    "rotation_ccw_degrees": 8
+  },
+  "seed": 109102,
+  "mask_indices": [
+    7,
+    30,
+    35,
+    64,
+    74,
+    91
+  ],
+  "original_codes": [
+    6808,
+    1495,
+    1144,
+    3094,
+    1157,
+    5859
+  ],
+  "replacement_codes": [
+    4270,
+    217,
+    1435,
+    1869,
+    7610,
+    8102
+  ],
+  "changed_code_count": 6,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.712674140930176,
+  "changed_pixels": 13193,
+  "max_pixel_change": 64,
+  "sample_id": "d9-v102",
+  "source_relative_path": "9/mnist_train_44780.png",
+  "source_sha256": "dc515f2679343c19f0e22842d7f88039e3e22f172c1d4d416cf505f40aa4df3d",
+  "source_index": 44780,
+  "variant": 102,
+  "control_variant": 10,
+  "replaces": "d9-v058",
+  "replaces_sha256": "560fd63c7529ffde2753099bfbc9b5d5610267ac38ec08c577fdc84249717328",
+  "replacement_reason": "A solid angled cap meets a straight descending stroke in both images, producing the silhouette of a serif one.",
+  "sha256": "a3732249a02061f86e9f1c21270fbddc795b56ad1c8317330fd4180b7b94fda2"
+}

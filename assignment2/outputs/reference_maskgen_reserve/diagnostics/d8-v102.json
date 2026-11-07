@@ -1,0 +1,50 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 2,
+    "erosion_mix": 1.0
+  },
+  "seed": 108102,
+  "mask_indices": [
+    39,
+    40,
+    79,
+    87,
+    119
+  ],
+  "original_codes": [
+    6009,
+    5771,
+    1842,
+    1498,
+    1022
+  ],
+  "replacement_codes": [
+    858,
+    5536,
+    1537,
+    956,
+    1447
+  ],
+  "changed_code_count": 5,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.8019063472747803,
+  "changed_pixels": 8638,
+  "max_pixel_change": 64,
+  "sample_id": "d8-v102",
+  "source_relative_path": "8/mnist_train_34042.png",
+  "source_sha256": "23f583ea2c5cebd8b58e90aced877cf169737ccfac6d48df0882216412c88304",
+  "source_index": 34042,
+  "variant": 102,
+  "control_variant": 4,
+  "replaces": "d8-v020",
+  "replaces_sha256": "a2a27ae91e4461bae8f181890584dc08b1c977d06cd89c1fa34c67c5b73de4fb",
+  "replacement_reason": "A single upper loop and a straight lower stem form a nine in both images.",
+  "sha256": "32f1ba4625d3b40a5cd3fad838cc0c1714be9f7fcd42290f88d1676a1461f511"
+}

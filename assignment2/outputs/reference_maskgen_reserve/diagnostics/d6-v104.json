@@ -1,0 +1,46 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "rotation",
+    "rotation_ccw_degrees": -8
+  },
+  "seed": 106104,
+  "mask_indices": [
+    35,
+    42,
+    89,
+    98
+  ],
+  "original_codes": [
+    5241,
+    5121,
+    1011,
+    1640
+  ],
+  "replacement_codes": [
+    4881,
+    1668,
+    128,
+    1668
+  ],
+  "changed_code_count": 4,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.0969810485839844,
+  "changed_pixels": 9986,
+  "max_pixel_change": 64,
+  "sample_id": "d6-v104",
+  "source_relative_path": "6/mnist_train_25579.png",
+  "source_sha256": "a58bfedea53e48d5e599e9c4f40b817e1c581e5815d282ca37858c222b4a8602",
+  "source_index": 25579,
+  "variant": 104,
+  "control_variant": 9,
+  "replaces": "d6-v069",
+  "replaces_sha256": "976f23f71f680aa1939c5b68d2ee6bfb62067735c6479a67e63ae0a5b9a25a0e",
+  "replacement_reason": "A thick forked stem forms an r-shaped silhouette in both images, without a returning lower stroke or loop to identify a six.",
+  "sha256": "cd6517fa056bbc8bbdc2bb4d13dd3fbd82a8812de8ce4517d69ca05823f6c123"
+}

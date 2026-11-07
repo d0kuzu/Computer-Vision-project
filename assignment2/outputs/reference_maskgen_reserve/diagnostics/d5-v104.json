@@ -1,0 +1,53 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 2,
+    "erosion_mix": 0.85
+  },
+  "seed": 105104,
+  "mask_indices": [
+    3,
+    14,
+    66,
+    76,
+    117,
+    120
+  ],
+  "original_codes": [
+    1022,
+    5051,
+    821,
+    5278,
+    1044,
+    6308
+  ],
+  "replacement_codes": [
+    1569,
+    5503,
+    1053,
+    5540,
+    1447,
+    4790
+  ],
+  "changed_code_count": 6,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.3831899166107178,
+  "changed_pixels": 7595,
+  "max_pixel_change": 63,
+  "sample_id": "d5-v104",
+  "source_relative_path": "5/mnist_train_10316.png",
+  "source_sha256": "42360141dc7b6fb5077599fd4080700a0a3b29cfac61f49282b5872480b4ce12",
+  "source_index": 10316,
+  "variant": 104,
+  "control_variant": 2,
+  "replaces": "d5-v078",
+  "replaces_sha256": "f816d518c57ba7f66a68bb405dde9aac97d74b9964b52ee0114d7dd45b515eaf",
+  "replacement_reason": "A straight upper stroke runs into one small closed lower-left oval. The resulting shape resembles a slanted six.",
+  "sha256": "62ae42b2f0dbf98f94c6019d5a8b6e1ad215563b8181a843086c0b40fcf2109a"
+}

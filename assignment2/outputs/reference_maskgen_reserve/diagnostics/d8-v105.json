@@ -1,0 +1,47 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 1,
+    "erosion_mix": 0.8
+  },
+  "seed": 108105,
+  "mask_indices": [
+    0,
+    60,
+    66,
+    111
+  ],
+  "original_codes": [
+    5473,
+    1435,
+    7413,
+    1578
+  ],
+  "replacement_codes": [
+    6537,
+    230,
+    56,
+    4059
+  ],
+  "changed_code_count": 4,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.2198160886764526,
+  "changed_pixels": 9079,
+  "max_pixel_change": 28,
+  "sample_id": "d8-v105",
+  "source_relative_path": "8/mnist_train_19720.png",
+  "source_sha256": "474d24654fd4a2f4db05009effb55bb1e20a353541cecdeb62045dde69becd76",
+  "source_index": 19720,
+  "variant": 105,
+  "control_variant": 1,
+  "replaces": "d8-v053",
+  "replaces_sha256": "fcb6a175acf851c3bd51f8e68a24a348a27eebd6c0ac2ea502b0d66df5d37079",
+  "replacement_reason": "Nearly solid ink with a branched top and a drop-shaped bottom obscures the two lobes of an eight in both images.",
+  "sha256": "c42916e4c6889b3293ef82c75101067846bdf52ddc207b57f7b15a0bab1acf8c"
+}

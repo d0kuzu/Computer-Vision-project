@@ -1,0 +1,53 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 2,
+    "erosion_mix": 0.85
+  },
+  "seed": 106103,
+  "mask_indices": [
+    10,
+    24,
+    39,
+    40,
+    90,
+    102
+  ],
+  "original_codes": [
+    203,
+    5329,
+    283,
+    4319,
+    5503,
+    203
+  ],
+  "replacement_codes": [
+    813,
+    206,
+    426,
+    1669,
+    6298,
+    956
+  ],
+  "changed_code_count": 6,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.1963605880737305,
+  "changed_pixels": 9120,
+  "max_pixel_change": 60,
+  "sample_id": "d6-v103",
+  "source_relative_path": "6/mnist_train_32205.png",
+  "source_sha256": "9f88c74e2a4014d65048925c703b71816b06dca21e5b30f38f1ebbff6b21cecb",
+  "source_index": 32205,
+  "variant": 103,
+  "control_variant": 2,
+  "replaces": "d6-v062",
+  "replaces_sha256": "13c5fea468b1c86fad232f59c0cead62f4a1d3cbfe490ef012dc55242cbc5d68",
+  "replacement_reason": "One open U-shaped stroke remains in both images, without a closed or returning lower stroke characteristic of six.",
+  "sha256": "9a4b187dbe8d31836809d265cbd2a363151b54d0f3fd3d2e77338d3b4cc21a1f"
+}

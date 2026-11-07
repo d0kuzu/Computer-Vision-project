@@ -1,0 +1,47 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "marker-bleed",
+    "dilation_radius_px": 2,
+    "blur_sigma_px": 0.65
+  },
+  "seed": 108103,
+  "mask_indices": [
+    75,
+    85,
+    87,
+    111
+  ],
+  "original_codes": [
+    1204,
+    523,
+    4654,
+    5611
+  ],
+  "replacement_codes": [
+    891,
+    1447,
+    1435,
+    203
+  ],
+  "changed_code_count": 4,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 0.9818181991577148,
+  "changed_pixels": 9598,
+  "max_pixel_change": 50,
+  "sample_id": "d8-v103",
+  "source_relative_path": "8/mnist_train_37979.png",
+  "source_sha256": "c09e9485c7399264f728706f8204d65670c72a1c371b42a57017d9c34c3096d5",
+  "source_index": 37979,
+  "variant": 103,
+  "control_variant": 5,
+  "replaces": "d8-v021",
+  "replaces_sha256": "46e3887b6360957dcadd9f77ab9d7b19e758d421454efe4d5ab3f6732653049e",
+  "replacement_reason": "A closed lower loop and an open upper hook give both images the shape of a six.",
+  "sha256": "3f4562d675f83339b459613c555e6a7e71b1a6d199143c9110a702c9972295c4"
+}

@@ -1,0 +1,50 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "marker-bleed",
+    "dilation_radius_px": 4,
+    "blur_sigma_px": 1.15
+  },
+  "seed": 105103,
+  "mask_indices": [
+    40,
+    49,
+    91,
+    109,
+    115
+  ],
+  "original_codes": [
+    1668,
+    859,
+    860,
+    728,
+    7397
+  ],
+  "replacement_codes": [
+    4324,
+    881,
+    915,
+    956,
+    891
+  ],
+  "changed_code_count": 5,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 0.9594460725784302,
+  "changed_pixels": 9043,
+  "max_pixel_change": 45,
+  "sample_id": "d5-v103",
+  "source_relative_path": "5/mnist_train_39502.png",
+  "source_sha256": "18697d026a1c5609a857c30bbce94a174e36e5861fc1af69d5dca113b8222696",
+  "source_index": 39502,
+  "variant": 103,
+  "control_variant": 8,
+  "replaces": "d5-v060",
+  "replaces_sha256": "86ba50fe989f17f4e63a63c66c72803d62a887ce53aa2f4e8de814411ad6eb8c",
+  "replacement_reason": "A straight vertical stem and a left-facing bottom hook form a J or integral sign in both images.",
+  "sha256": "33a04e94dd4a87954583e84fdc98a33b4ae8f84dd60789bfd0296df3896b905b"
+}

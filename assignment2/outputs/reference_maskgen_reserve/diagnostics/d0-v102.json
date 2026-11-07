@@ -1,0 +1,47 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "marker-bleed",
+    "dilation_radius_px": 2,
+    "blur_sigma_px": 0.65
+  },
+  "seed": 100102,
+  "mask_indices": [
+    0,
+    3,
+    9,
+    84
+  ],
+  "original_codes": [
+    1668,
+    7459,
+    1252,
+    1127
+  ],
+  "replacement_codes": [
+    4324,
+    7329,
+    3053,
+    7979
+  ],
+  "changed_code_count": 4,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.7911713123321533,
+  "changed_pixels": 10595,
+  "max_pixel_change": 63,
+  "sample_id": "d0-v102",
+  "source_relative_path": "0/mnist_train_43011.png",
+  "source_sha256": "e37c17e00bb278330081e4a0504530afe4bf9a2355083c64cbfbcbaf5c845e4e",
+  "source_index": 43011,
+  "variant": 102,
+  "control_variant": 5,
+  "replaces": "d0-v077",
+  "replaces_sha256": "13310f4d1467a5d40530662852386517dd7c2ff9e670308be1b593c3ff05ecac",
+  "replacement_reason": "A long open U on the left and a closed oval on the right give both images the appearance of a connected 10.",
+  "sha256": "76f334f10e2dcb0df3a5f233cbd0ab7479a577dafd76dbcd57d1c85a4af6e866"
+}

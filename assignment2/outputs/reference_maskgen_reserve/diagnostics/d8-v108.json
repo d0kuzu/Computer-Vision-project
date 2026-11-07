@@ -1,0 +1,52 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "rotation",
+    "rotation_ccw_degrees": 8
+  },
+  "seed": 108108,
+  "mask_indices": [
+    17,
+    38,
+    46,
+    59,
+    77,
+    119
+  ],
+  "original_codes": [
+    1603,
+    5120,
+    904,
+    5448,
+    1418,
+    29
+  ],
+  "replacement_codes": [
+    60,
+    1647,
+    1053,
+    4270,
+    1569,
+    750
+  ],
+  "changed_code_count": 6,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 3.334810972213745,
+  "changed_pixels": 12277,
+  "max_pixel_change": 64,
+  "sample_id": "d8-v108",
+  "source_relative_path": "8/mnist_train_56710.png",
+  "source_sha256": "4bbd1e0f939be50696fd58a65297e180201a9a91917c6d45fbe5a0031f9ababb",
+  "source_index": 56710,
+  "variant": 108,
+  "control_variant": 10,
+  "replaces": "d8-v098",
+  "replaces_sha256": "5c4fc32789eedcedb9555f817901fb19b7262d2886afc7b9369c8f3205a76be4",
+  "replacement_reason": "A solid curved upper stem runs into a single closed lower loop. Both images read as a six.",
+  "sha256": "a6b9b85f70900407e91b1d22266ddfdd961bdefeca74a304dc4f0ddc06bec009"
+}

@@ -1,0 +1,59 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 3,
+    "erosion_mix": 0.7
+  },
+  "seed": 108104,
+  "mask_indices": [
+    14,
+    15,
+    39,
+    74,
+    87,
+    92,
+    108,
+    121
+  ],
+  "original_codes": [
+    933,
+    583,
+    844,
+    6595,
+    680,
+    477,
+    6328,
+    4541
+  ],
+  "replacement_codes": [
+    285,
+    1622,
+    89,
+    2712,
+    1597,
+    1053,
+    1639,
+    1899
+  ],
+  "changed_code_count": 8,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.5802797079086304,
+  "changed_pixels": 8475,
+  "max_pixel_change": 53,
+  "sample_id": "d8-v104",
+  "source_relative_path": "8/mnist_train_49579.png",
+  "source_sha256": "2cde5172d95dcfb73d316e0931971c708e090e6fe63cf0ff6dfd9ba24abf9f55",
+  "source_index": 49579,
+  "variant": 104,
+  "control_variant": 3,
+  "replaces": "d8-v031",
+  "replaces_sha256": "bfd912276fc63104c82f8e39bb5ce0e2b60c8a1c8c05e1a2017dc081f56b52ca",
+  "replacement_reason": "The pair shows an open hook with one long diagonal descender and no lower loop or second lobe to identify an eight.",
+  "sha256": "d44b1d6f65ae5d66da7d3c408d1154ef531baf86caef30c41207bc342ad5d0c5"
+}

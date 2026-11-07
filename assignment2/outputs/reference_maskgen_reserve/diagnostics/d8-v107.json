@@ -1,0 +1,47 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "thin-brush",
+    "erosion_radius_px": 1,
+    "erosion_mix": 0.8
+  },
+  "seed": 108107,
+  "mask_indices": [
+    0,
+    81,
+    98,
+    116
+  ],
+  "original_codes": [
+    3527,
+    85,
+    956,
+    6742
+  ],
+  "replacement_codes": [
+    6210,
+    1569,
+    230,
+    6690
+  ],
+  "changed_code_count": 4,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.7832419872283936,
+  "changed_pixels": 8431,
+  "max_pixel_change": 58,
+  "sample_id": "d8-v107",
+  "source_relative_path": "8/mnist_train_47218.png",
+  "source_sha256": "686e48910fbebaba032ef0c02bca7a6b6b2556144055c9807d6908a84b305757",
+  "source_index": 47218,
+  "variant": 107,
+  "control_variant": 1,
+  "replaces": "d8-v089",
+  "replaces_sha256": "2b14c2cccfdecb2371b6ef31c1d8a5a91856cba2f46e5f30c811ed4440908c3e",
+  "replacement_reason": "A single upper loop crosses into two short splayed ends at the bottom. The missing lower lobe leaves a ribbon-shaped glyph.",
+  "sha256": "822b63ee8b0eaed103e21de9de6b6a426710c729a60a3c3f218a7b00c17df2e3"
+}

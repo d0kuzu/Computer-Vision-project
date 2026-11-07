@@ -1,0 +1,43 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "rotation",
+    "rotation_ccw_degrees": -8
+  },
+  "seed": 107065,
+  "mask_indices": [
+    68,
+    73,
+    101,
+    113
+  ],
+  "original_codes": [
+    7848,
+    4463,
+    7170,
+    1644
+  ],
+  "replacement_codes": [
+    5057,
+    2590,
+    1278,
+    5548
+  ],
+  "changed_code_count": 4,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.369196653366089,
+  "changed_pixels": 8958,
+  "max_pixel_change": 64,
+  "sample_id": "d7-v065",
+  "source_relative_path": "7/mnist_train_40810.png",
+  "source_sha256": "32e7abbf2b37bd84bea686a3c0f22610b2bbf176eaafbd8870e62cf5c220b469",
+  "source_index": 40810,
+  "variant": 65,
+  "control_variant": 9,
+  "sha256": "e3a6466f72f39814fd2e03f72b211558450562eb1252efb99d5bf006e13831d0"
+}

@@ -1,0 +1,50 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "marker-bleed",
+    "dilation_radius_px": 4,
+    "blur_sigma_px": 1.15
+  },
+  "seed": 102102,
+  "mask_indices": [
+    12,
+    25,
+    39,
+    54,
+    90
+  ],
+  "original_codes": [
+    185,
+    265,
+    68,
+    8077,
+    5503
+  ],
+  "replacement_codes": [
+    946,
+    956,
+    995,
+    6250,
+    4324
+  ],
+  "changed_code_count": 5,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 1.1663196086883545,
+  "changed_pixels": 10013,
+  "max_pixel_change": 51,
+  "sample_id": "d2-v102",
+  "source_relative_path": "2/mnist_train_08564.png",
+  "source_sha256": "8efad72c74535f45583c613a5c0382a9502a5d2d606f8fe79c920692bf5637af",
+  "source_index": 8564,
+  "variant": 102,
+  "control_variant": 8,
+  "replaces": "d2-v084",
+  "replaces_sha256": "81b4d4e314a2b4dc7bb7faa8af6cef3a533f8e038e85fc77523113d769de3fd2",
+  "replacement_reason": "A large closed upper oval with a tiny lower-left knot and a sweeping tail gives both glyphs the shape of a capital Q.",
+  "sha256": "352233d555d298fa24d61394f3689b2b5438b83537d6ca50009236e91a1f5ffa"
+}

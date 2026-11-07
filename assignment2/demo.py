@@ -84,8 +84,22 @@ def user_input(payload):
     return preprocess(image)
 
 
-def metrics():
-    path = HERE / "results" / "metrics.json"
+def live_results():
+    expanded = HERE / "results_3000"
+    try:
+        report = json.loads((expanded / "metrics.json").read_text(encoding="utf-8"))
+        checkpoint = expanded / "cnn_a2.pt"
+        if (isinstance(report, dict) and report.get("status") == "complete" and report.get("expanded_train_size") == 2400
+                and report.get("selected_model") in {"a1", "prior_120", "control", "synthetic"}
+                and hashlib.sha256(checkpoint.read_bytes()).hexdigest() == report.get("checkpoint_sha256")):
+            return expanded
+    except (FileNotFoundError, ValueError):
+        pass
+    return HERE / "results"
+
+
+def metrics(results_dir=None):
+    path = (results_dir or HERE / "results") / "metrics.json"
     report = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {}
     rows = []
     for name, model in report.get("models", {}).items():
@@ -100,19 +114,24 @@ def metrics():
                     if row["model"] == "CNN":
                         rows.append({"name": "a1", "accuracy": float(row["accuracy"]),
                                      "f1": float(row["f1_macro"])})
-    return {"rows": rows, "selected_model": report.get("selected_model"),
-            "synthetic_accepted": report.get("synthetic_accepted"), "status": report.get("status")}
+    selected = report.get("selected_model")
+    return {"rows": rows, "selected_model": selected,
+            "selected_training_originals": report.get("models", {}).get(selected, {}).get("training_originals_by_source"),
+            "synthetic_in_training": report.get("synthetic_in_training", report.get("synthetic_accepted")),
+            "synthetic_accepted": report.get("synthetic_accepted", report.get("dataset", {}).get("label_sources", {}).get("user_batch_review")),
+            "status": report.get("status")}
 
 
 class Recognizer:
-    def __init__(self):
+    def __init__(self, results_dir=None):
+        self.results_dir = results_dir or HERE / "results"
         self.lock = threading.Lock()
         self.signature = None
         self.device = f"CPU · {platform.machine()}"
         self.refresh()
 
     def refresh(self):
-        a2 = HERE / "results" / "cnn_a2.pt"
+        a2 = self.results_dir / "cnn_a2.pt"
         path = a2 if a2.is_file() else A1 / "results" / "cnn.pt"
         stat = path.stat()
         signature = (path, stat.st_mtime_ns, stat.st_size)
@@ -131,9 +150,13 @@ class Recognizer:
             self.classifier = model[cut:]
             self.name = "CNN A1 · MNIST"
             if path == a2:
-                selected = metrics()["selected_model"]
+                selected = metrics(self.results_dir)["selected_model"]
                 self.name = {"a1": "CNN A1 · выбрана в A2", "control": "CNN A2 · без синтетики",
                              "synthetic": "CNN A2 · с синтетикой"}.get(selected, "CNN · Assignment 2")
+                if self.results_dir == HERE / "results_3000":
+                    self.name = {"prior_120": "CNN A2 · 120 синтетических изображений",
+                                 "control": "CNN A2 · контроль с повтором исходных изображений",
+                                 "synthetic": "CNN A2 · 1 000 синтетических изображений"}.get(selected, self.name)
             self.total_ms = 0.0
             self.count = 0
             self.signature = signature
@@ -408,7 +431,7 @@ class Handler(BaseHTTPRequestHandler):
                     recognizer.refresh()
                     info = recognizer.info()
                 available = pilots.available()
-                return self.respond(200, {**info, "pilots": list(available), "metrics": metrics(),
+                return self.respond(200, {**info, "pilots": list(available), "metrics": metrics(recognizer.results_dir),
                                           "pilot_methods": {k: v[1] for k, v in available.items()},
                                           "skipped_pilots": pilots.skipped})
             if url.path == "/api/gallery":
@@ -453,7 +476,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def make_server(port, outputs=None, pilot=None):
     server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
-    server.recognizer = Recognizer()
+    server.recognizer = Recognizer(results_dir=live_results())
     server.pilots = Pilots(outputs or HERE / "outputs", pilot)
     return server
 
