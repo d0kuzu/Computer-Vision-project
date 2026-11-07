@@ -1,0 +1,51 @@
+{
+  "method": "reference_masked_tokens_v1",
+  "control": {
+    "style": "marker-bleed",
+    "dilation_radius_px": 2,
+    "blur_sigma_px": 0.45
+  },
+  "seed": 749,
+  "mask_indices": [
+    19,
+    38,
+    56,
+    59,
+    81,
+    92,
+    94,
+    122
+  ],
+  "original_codes": [
+    1808,
+    1640,
+    5578,
+    5162,
+    5420,
+    265,
+    2183,
+    122
+  ],
+  "replacement_codes": [
+    7844,
+    1669,
+    1044,
+    7329,
+    6858,
+    203,
+    3910,
+    342
+  ],
+  "changed_code_count": 8,
+  "sampler_top_k": 8,
+  "sampler_temperature": 0.8,
+  "aesthetic_score": 6.5,
+  "residual_clip_gray": 64,
+  "halo_radius_px": 5,
+  "halo_blur_sigma_px": 1.5,
+  "mean_absolute_change_on_stroke": 2.3730921745300293,
+  "changed_pixels": 10168,
+  "max_pixel_change": 64,
+  "sample_id": "d7-v07",
+  "sha256": "8f4666699031464880d46d9c5cc2636badd2aec9158e0014cd6c31734c5f036e"
+}

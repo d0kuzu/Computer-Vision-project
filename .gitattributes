@@ -1,0 +1,7 @@
+*.pdf binary
+*.pt binary
+
+# Reproduction checks use the original bytes of these manifests and recipes.
+assignment1/data/mnist_subset/manifest.csv -text whitespace=cr-at-eol
+assignment2/outputs/**/*.csv -text whitespace=cr-at-eol
+assignment2/outputs/**/*.json -text whitespace=cr-at-eol

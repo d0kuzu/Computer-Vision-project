@@ -1,0 +1,4 @@
+# Local CNN demo and training (Python 3.12); CPU wheels work on Windows/Linux.
+torch==2.6.0
+numpy>=1.26,<3
+Pillow>=10.1,<14

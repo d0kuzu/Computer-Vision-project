@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+.cpu.lock
+/assignment2/reproduced/
+/assignment2/outputs/*
+!/assignment2/outputs/reference_maskgen_cadcae3f15d2/
+/assignment2/outputs/*/*.zip
+/assignment2/CV_Assignment_2 (2).pdf

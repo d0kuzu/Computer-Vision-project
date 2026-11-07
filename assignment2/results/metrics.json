@@ -1,0 +1,521 @@
+{
+  "status": "complete",
+  "selected_model": "synthetic",
+  "classes": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "seed": 42,
+  "epochs": 5,
+  "batch_size": 64,
+  "optimizer": "Adam",
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "real_batch_slots": 56,
+  "extra_batch_slots": 8,
+  "torch_version": "2.6.0+cpu",
+  "threads": 1,
+  "selection": "Maximize real validation macro F1, breaking ties by lower validation cross-entropy",
+  "real_source": "A1 balanced public MNIST subset",
+  "real_sizes": {
+    "train": 1400,
+    "val": 300,
+    "test": 300
+  },
+  "a1_checkpoint_sha256": "a9abd0206458b64cc07af067d0ccacd1996633e5f8b08fcb8b731c382e552873",
+  "mnist_manifest_sha256": "2ed13437881dbf60efbc1153dd4f8053485e2d259b3ca184b852d4487cbbf14a",
+  "synthetic_accepted": 120,
+  "pilot": {
+    "method": "reference_masked_tokens_v1",
+    "reference_sources": 120,
+    "accepted_reference_sources": 120,
+    "run": "reference_maskgen_cadcae3f15d2",
+    "run_sha256": "e6d39fe2ad515d1bec72da317e752e3dd644ea6a1d4366ce65714486946012c1",
+    "manifest_sha256": "d801f0043fe0e7b738f4d2fddf67c234709f1c2baa92816acaad36ee4d44a247",
+    "withheld_for_consent": 0,
+    "review_sha256": "28ddd06d2c9ce6bbcd1ebe934ca5e4ac39d20c500daeb0f5a8f9362c08d2c741",
+    "review_counts": {
+      "accept": 120
+    },
+    "accepted_by_digit": {
+      "0": 12,
+      "1": 12,
+      "2": 12,
+      "3": 12,
+      "4": 12,
+      "5": 12,
+      "6": 12,
+      "7": 12,
+      "8": 12,
+      "9": 12
+    }
+  },
+  "models": {
+    "a1": {
+      "epoch": 0,
+      "validation": {
+        "loss": 0.10333849489688873,
+        "n": 300,
+        "accuracy": 0.9733333333333334,
+        "macro_f1": 0.9737476459510358
+      },
+      "training_originals_by_source": {
+        "real": 1400,
+        "synthetic": 0
+      },
+      "test": {
+        "loss": 0.048048779368400574,
+        "n": 300,
+        "accuracy": 0.9833333333333333,
+        "macro_f1": 0.983537712515296,
+        "confusion_matrix": [
+          [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      }
+    },
+    "control": {
+      "epoch": 2,
+      "validation": {
+        "loss": 0.10921507328748703,
+        "n": 300,
+        "accuracy": 0.9733333333333334,
+        "macro_f1": 0.9732146860718016
+      },
+      "optimizer_steps_per_epoch": 25,
+      "training_originals_by_source": {
+        "real": 1400,
+        "synthetic": 0
+      },
+      "source_draws_per_epoch": {
+        "real_original": 1400,
+        "real_replay": 200,
+        "synthetic": 0
+      },
+      "test": {
+        "loss": 0.03699428588151932,
+        "n": 300,
+        "accuracy": 0.99,
+        "macro_f1": 0.9900501035233802,
+        "confusion_matrix": [
+          [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      }
+    },
+    "synthetic": {
+      "epoch": 2,
+      "validation": {
+        "loss": 0.12716872990131378,
+        "n": 300,
+        "accuracy": 0.9766666666666667,
+        "macro_f1": 0.9764934704084469
+      },
+      "optimizer_steps_per_epoch": 25,
+      "training_originals_by_source": {
+        "real": 1400,
+        "synthetic": 120
+      },
+      "source_draws_per_epoch": {
+        "real_original": 1400,
+        "real_replay": 0,
+        "synthetic": 200
+      },
+      "test": {
+        "loss": 0.028832724317908287,
+        "n": 300,
+        "accuracy": 0.9866666666666667,
+        "macro_f1": 0.9867714149987901,
+        "confusion_matrix": [
+          [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      },
+      "checkpoint": "cnn_a2_synthetic.pt",
+      "checkpoint_sha256": "c50212178ecdb5fd2e105ccb5ac51ac9c98f0375103cfa237dead662977ac3bd"
+    }
+  },
+  "paired_comparisons": {
+    "a1_to_control": {
+      "fixed": 2,
+      "introduced": 0,
+      "both_correct": 295,
+      "both_wrong": 3
+    },
+    "a1_to_synthetic": {
+      "fixed": 2,
+      "introduced": 1,
+      "both_correct": 294,
+      "both_wrong": 3
+    },
+    "control_to_synthetic": {
+      "fixed": 0,
+      "introduced": 1,
+      "both_correct": 296,
+      "both_wrong": 3
+    }
+  },
+  "checkpoint_sha256": "fc7e2945046ea1c66a73891ffa9d7790d7a1c678a14c31d1f3f2d134b12593ea"
+}

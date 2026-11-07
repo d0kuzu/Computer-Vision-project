@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лаборатория цифр · Assignment 2</title>
+<style>
+:root{color-scheme:light;--ink:#17362f;--muted:#50675f;--line:#d9e2d8;--paper:#fffefa;--pine:#116248;--pale:#e8f1e7;--orange:#b05133}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f6ef;color:var(--ink);font:16px/1.5 Inter,"Segoe UI",system-ui,sans-serif}
+header{border-bottom:1px solid var(--line);background:var(--paper)}
+.bar,main{max-width:1170px;margin:auto;padding:0 32px}
+.bar,.row,.actions,.tabs,nav,.section-head,.model-line,.key{display:flex;align-items:center}
+.bar{justify-content:space-between;min-height:68px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:750;white-space:nowrap}
+.mark{display:inline-grid;place-items:center;min-width:39px;height:33px;border-radius:9px 3px 9px 3px;background:var(--ink);color:white;font:700 17px/1 Georgia}
+nav{gap:22px}nav a{font-size:14px;color:var(--muted);text-decoration:none}nav a:hover{color:var(--pine);text-decoration:underline}
+main{padding-top:33px;padding-bottom:60px}section{scroll-margin-top:18px}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(32px,5vw,54px);font-weight:690;letter-spacing:-.06em;line-height:1.05}
+h2{font-size:clamp(23px,3vw,31px);letter-spacing:-.045em;line-height:1.15}h3,legend{font-size:17px;letter-spacing:-.015em}
+.intro,.muted,.info{color:var(--muted)}.intro{margin:9px 0 22px;font-size:16px}.small,.info,small{font-size:13px;line-height:1.4}
+.lab{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(335px,1.15fr);gap:16px}
+.card{border:1px solid var(--line);background:var(--paper);border-radius:18px;padding:21px 24px}
+.section-head,.model-line{justify-content:space-between;gap:12px}.model-line{align-items:flex-start}
+.model-name{font-size:12px;color:var(--pine);padding:4px 8px;background:var(--pale);border-radius:6px;line-height:1.4}
+.tabs{margin:14px 0 10px;gap:4px;padding:3px;background:#edf0e8;border-radius:10px}
+button,select,input,textarea{font:inherit}button,select,input[type=file]{cursor:pointer}button{border:0;appearance:none}button:disabled{cursor:wait;opacity:.55}
+button:focus-visible,select:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #e7a470;outline-offset:2px}
+.tabs button{flex:1;padding:7px 9px;border-radius:7px;font-size:14px;color:var(--muted);background:none}
+.tabs button[aria-pressed=true]{color:var(--ink);background:white;box-shadow:0 1px 4px #153a2b20;font-weight:650}
+.pad-zone,.upload-zone{display:grid;place-items:center;min-height:218px;border:1px solid var(--line);border-radius:12px;background:#f8f9f4}
+canvas{display:block;touch-action:none;width:min(100%,218px);height:auto;aspect-ratio:1;cursor:crosshair;background:white}
+.upload-zone{padding:15px;text-align:center;align-content:center;gap:7px}.upload-zone img{max-height:115px;max-width:90%;object-fit:contain}
+.file-label{font-weight:650;font-size:14px;cursor:pointer;color:var(--pine);text-decoration:underline}
+.actions{gap:9px;flex-wrap:wrap;margin-top:12px}.primary,.secondary{border-radius:9px;padding:9px 15px;font-size:14px;font-weight:650}
+.primary{color:white;background:var(--pine)}.primary:hover{background:#0b513a}.secondary{border:1px solid var(--line);color:var(--ink);background:#fff}.secondary:hover{background:var(--pale)}
+.input-msg{min-height:18px;margin-top:8px}.error{color:#9d382a!important}
+.answer-area{display:grid;grid-template-columns:minmax(70px,.45fr) 1fr;gap:10px;align-items:center;min-height:106px}
+.digit{font-size:72px;line-height:1;font-weight:650;letter-spacing:-.08em}.scores{display:grid;gap:5px}
+.score{display:grid;grid-template-columns:12px 1fr 47px;gap:8px;align-items:center;font-size:12px;font-variant-numeric:tabular-nums}.score b{text-align:right}
+.track{height:5px;background:#e9eee8;border-radius:4px;overflow:hidden}.fill{height:100%;background:#479974}
+.explanation{border-top:1px solid var(--line);padding-top:13px}.explanation p{margin:4px 0 9px}
+.maps{display:flex;gap:12px}.maps figure{margin:0;text-align:left}.map{width:83px;height:83px;background:#eef1e9;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;color:#7a8a80}
+.map img{width:100%;height:100%;object-fit:contain;border-radius:7px;image-rendering:pixelated}figcaption{font-size:12px;color:var(--muted);margin-top:3px}
+.stats{border-top:1px solid var(--line);padding-top:9px;margin-top:12px;display:flex;flex-wrap:wrap;gap:4px 12px}
+.stats span{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.wide{margin-top:22px}.section-head{margin-bottom:6px}.controls{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.controls label,.review-controls label{font-size:13px;font-weight:600}
+select,textarea{border:1px solid #c5d3c7;border-radius:7px;padding:7px 9px;color:var(--ink);background:white}
+.gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin:13px 0}
+.candidate{color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:6px;text-align:left;background:#fff;min-width:0}
+.candidate:hover{border-color:var(--pine);box-shadow:0 2px 8px #164a3815}.candidate img{display:block;width:100%;height:83px;object-fit:contain;border-radius:6px;background:white}
+.candidate b,.candidate small{display:block;margin:2px 3px}.candidate b{font-size:12px}.candidate small{color:var(--muted);font-size:11px}
+.guide{background:#f1f4eb;border-radius:9px;padding:12px 14px;margin-top:12px}
+details{margin-top:12px;font-size:14px}summary{cursor:pointer;font-weight:600}code{overflow-wrap:anywhere;white-space:normal;font-family:ui-monospace,Consolas,monospace}
+.command{display:block;background:#eff2eb;border-radius:7px;padding:10px;margin:8px 0 4px}
+table{margin:11px 0 0;border-collapse:collapse;width:100%;font-size:14px}th,td{padding:8px 10px;border-top:1px solid var(--line);text-align:right}th{font-size:12px;color:var(--muted)}th:first-child,td:first-child{text-align:left}
+dialog{color:var(--ink);border:1px solid var(--line);border-radius:16px;width:min(540px,94vw);padding:22px;background:var(--paper);max-height:94vh}
+dialog::backdrop{background:#12241db3}dialog h2{font-size:23px}
+.detail-grid{display:grid;grid-template-columns:135px 1fr;gap:16px;align-items:center;margin:14px 0}
+.detail-grid img{width:135px;height:135px;object-fit:contain;border:1px solid var(--line);border-radius:8px}
+.detail-grid figure{margin:0}.detail-grid.with-source{grid-template-columns:repeat(2,minmax(0,1fr))}
+.detail-grid.with-source .candidate-meta{grid-column:1/-1}.detail-grid figure img{width:100%;display:block;background:white}
+.detail-grid #source-image{image-rendering:pixelated}
+.controls label{max-width:100%}#pilot{max-width:100%}.controls select{width:auto}
+.review-controls{display:grid;gap:10px}.review-controls label{display:grid;gap:3px}
+.review-controls .check{display:flex;align-items:flex-start;gap:7px;font-weight:400}.check input{margin-top:4px}
+.review-controls textarea{resize:vertical;min-height:44px}p[role=status]{overflow-wrap:anywhere}
+[hidden]{display:none!important}
+@media(max-width:750px){.bar,main{padding-left:15px;padding-right:15px}.lab{grid-template-columns:1fr}.card{padding:16px}.bar{min-height:56px}.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}nav{gap:9px}nav a{font-size:12px}.section-head{align-items:flex-start}}
+@media(max-width:420px){nav a:last-child{display:none}.brand{font-size:14px}.detail-grid{grid-template-columns:95px 1fr}.detail-grid img{width:95px;height:95px}}
+</style>
+</head>
+<body>
+<header><div class="bar"><div class="brand"><span class="mark" aria-hidden="true">0–9</span>Лаборатория цифр</div>
+<nav aria-label="Разделы"><a href="#recognition">Распознавание</a><a href="#variants">Варианты</a><a href="#metrics">Метрики</a></nav></div></header>
+<main>
+<section id="recognition"><h1>Рукописные цифры</h1><p class="intro">Нарисуйте одну цифру или загрузите изображение и посмотрите, какие штрихи повлияли на ответ CNN.</p>
+<div class="lab"><div class="card"><h2>Ввод</h2>
+<div class="tabs" aria-label="Источник"><button id="drawing" aria-pressed="true">Рисунок</button><button id="uploading" aria-pressed="false">Загрузка файла</button></div>
+<div class="pad-zone" id="pad-zone"><canvas id="pad" width="280" height="280" aria-label="Поле для рисования цифры"></canvas></div>
+<div class="upload-zone" id="upload-zone" hidden><img id="file-preview" alt="Загруженная цифра" hidden><strong id="file-name">Изображение одной цифры</strong><button id="choose-file" class="secondary">Выбрать файл</button><input id="file" type="file" hidden accept="image/png,image/jpeg,image/webp"><small class="muted">PNG, JPEG, WebP · до 6 МБ<br>Обрежьте лишние поля вокруг цифры.</small></div>
+<div class="actions"><button class="primary" id="predict">Распознать</button><button class="secondary" id="clear">Очистить</button></div><p id="input-msg" class="info input-msg" role="status">Рисуйте мышью или пальцем. Ввод обрабатывается локально.</p></div>
+<div class="card"><div class="model-line"><h2>Ответ модели</h2><span id="model" class="model-name">Загрузка модели…</span></div>
+<div class="answer-area" aria-live="polite"><div id="answer" class="digit">—</div><div class="scores" id="scores"><span class="muted small">Ожидает изображения</span></div></div>
+<div class="explanation"><h3>Что увидела CNN</h3><p id="explanation" class="info">Тёплые области Grad-CAM сильнее поддерживают выбранный класс.</p>
+<div class="maps"><figure><div class="map" id="input-map">—</div><figcaption>Вход 32×32</figcaption></figure><figure><div class="map" id="heat-map">—</div><figcaption>Grad-CAM</figcaption></figure></div></div>
+<div class="stats"><span id="latency">Среднее время вывода —</span><span id="device"></span><span id="browser"></span></div></div></div></section>
+<section class="card wide" id="variants"><div class="section-head"><h2>Синтетические варианты</h2><button class="secondary" id="refresh">Обновить</button></div>
+<p id="gallery-intro" class="info">В галерее собраны заранее сгенерированные изображения MaskGen-L и TA-TiTok. Откройте вариант для ручной проверки.</p>
+<div class="controls" id="gallery-controls" hidden><label id="pilot-wrap">Набор <select id="pilot"></select></label><label>Цифра в промпте <select id="requested"></select></label></div>
+<p id="gallery-msg" class="small guide" role="status">Проверяем наличие PNG…</p><div class="gallery" id="gallery"></div>
+<details id="unavailable" hidden><summary>Какие наборы ещё не готовы</summary><ul id="skip-list"></ul></details>
+<details id="training" hidden><summary>Сравнить обучение с выбранными вариантами</summary><p class="info" id="training-help"></p><code class="command" id="command"></code></details></section>
+<section class="card wide" id="metrics"><h2>Метрики на MNIST</h2><p class="info" id="metric-note">Сохранённые результаты сравнения моделей.</p>
+<table><thead><tr><th>Модель</th><th>Accuracy</th><th>Macro F1</th></tr></thead><tbody id="metric-rows"></tbody></table></section>
+</main>
+<dialog id="review-dialog" aria-labelledby="dialog-title"><div class="section-head"><h2 id="dialog-title">Проверка кандидата</h2><button class="secondary" id="close" aria-label="Закрыть">Закрыть</button></div>
+<div class="detail-grid" id="review-examples"><figure><img id="review-image" alt="Синтетический кандидат"><figcaption>Сгенерировано MaskGen</figcaption></figure><figure id="source-figure" hidden><img id="source-image" alt="Исходная рукописная цифра MNIST"><figcaption id="source-caption"></figcaption></figure><div class="candidate-meta"><b id="candidate-id"></b><p class="small" id="candidate-info"></p><p class="small" id="candidate-pred" role="status"></p><small class="muted">Укажите цифру, видимую на синтетическом изображении. Отклоните неразборчивый или составной знак.</small></div></div>
+<form class="review-controls" id="review-form"><label>Решение<select id="decision"><option value="pending">Ожидает проверки</option><option value="accept">Принять в обучение</option><option value="reject">Отклонить</option></select></label>
+<label>Видимая цифра<select id="review-digit"><option value="">Не определена</option></select></label>
+<label>Комментарий<textarea id="notes" maxlength="1000" placeholder="Например, две цифры вместо одной"></textarea></label>
+<label class="check" id="consent-wrap" hidden><input type="checkbox" id="consent">Разрешаю использовать этот синтетический пример только в обучающей выборке.</label>
+<label class="check" id="replace-wrap" hidden><input type="checkbox" id="replace">Подтверждаю изменение сохранённой оценки.</label>
+<p class="info" role="status" id="review-msg"></p><div class="actions"><button type="submit" class="primary" id="save">Сохранить оценку</button></div></form></dialog>
+<script>
+"use strict";
+const el = id => document.getElementById(id);
+const canvas = el("pad"), ctx = canvas.getContext("2d"), dialog = el("review-dialog");
+const statuses = {pending:"Ожидает проверки",accept:"Принят",reject:"Отклонён"};
+const styles = {"thin-brush":"Тонкий штрих","marker-bleed":"Маркер","rotation":"Наклон"};
+const names = {a1:"CNN A1 · исходная модель",control:"Контроль · без синтетики",synthetic:"CNN · с синтетикой"};
+const methodName = method => method==="reference_masked_tokens_v1"?"По исходнику A1 (train)":method==="text_only"?"По текстовому запросу":method;
+let mode = "draw", drawing = false, hasInk = false, upload = null, selected = null;
+let galleryVersion = 0, inputVersion = 0, fileVersion = 0, chosenRun = null;
+for (let i=0; i<10; i++){el("requested").add(new Option(i,i));el("review-digit").add(new Option(i,i));}
+function message(id,text,error=false){el(id).textContent=text;el(id).classList.toggle("error",error);}
+async function api(url, payload){
+  const options = payload ? {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)} : {};
+  const response = await fetch(url,options), result = await response.json();
+  if (!response.ok) throw new Error(result.error || response.statusText);
+  return result;
+}
+function blank(){ctx.fillStyle="#fff";ctx.fillRect(0,0,280,280);hasInk=false;}
+function point(e){const r=canvas.getBoundingClientRect();return [(e.clientX-r.left)*280/r.width,(e.clientY-r.top)*280/r.height];}
+canvas.onpointerdown=e=>{
+  if (drawing || (e.pointerType==="mouse" && e.button!==0)) return;
+  e.preventDefault();canvas.setPointerCapture(e.pointerId);drawing=e.pointerId;hasInk=true;inputVersion++;
+  const [x,y]=point(e);ctx.strokeStyle="#000";ctx.lineWidth=17;ctx.lineCap="round";ctx.lineJoin="round";
+  ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+.1,y+.1);ctx.stroke();
+};
+canvas.onpointermove=e=>{if(drawing===e.pointerId){ctx.lineTo(...point(e));ctx.stroke();}};
+canvas.onpointerup=canvas.onpointercancel=()=>{drawing=false;};
+blank();
+function resetResult(){
+  el("answer").textContent="—";el("scores").textContent="Ожидает изображения";
+  el("input-map").textContent=el("heat-map").textContent="—";
+  el("explanation").textContent="Тёплые области Grad-CAM сильнее поддерживают выбранный класс.";
+}
+function switchMode(value){
+  inputVersion++;mode=value;
+  el("drawing").setAttribute("aria-pressed",mode==="draw");el("uploading").setAttribute("aria-pressed",mode==="upload");
+  el("pad-zone").hidden=mode!=="draw";el("upload-zone").hidden=mode!=="upload";resetResult();
+  message("input-msg","Ввод обрабатывается локально и не сохраняется.");
+}
+el("drawing").onclick=()=>switchMode("draw");el("uploading").onclick=()=>switchMode("upload");
+el("choose-file").onclick=()=>el("file").click();
+el("file").onchange=async()=>{
+  inputVersion++;const token=++fileVersion;upload=null;resetResult();el("file-preview").hidden=true;
+  const file=el("file").files[0];if(!file)return;
+  if(file.size>6*1024*1024){message("input-msg","Выберите файл до 6 МБ.",true);return;}
+  const reader=new FileReader();
+  reader.onload=()=>{if(token!==fileVersion)return;upload=reader.result;el("file-preview").src=upload;el("file-preview").hidden=false;el("file-name").textContent=file.name;message("input-msg","Файл готов к распознаванию.");};
+  reader.onerror=()=>message("input-msg","Не удалось прочитать файл.",true);reader.readAsDataURL(file);
+};
+el("clear").onclick=()=>{inputVersion++;fileVersion++;blank();upload=null;el("file").value="";el("file-preview").hidden=true;el("file-name").textContent="Изображение одной цифры";resetResult();message("input-msg","Ввод очищен.");};
+function info(data){
+  el("model").textContent=data.model;el("device").textContent=data.device;
+  el("latency").textContent=data.mean_ms==null?"Среднее время вывода —":("Вывод в среднем "+data.mean_ms.toFixed(2)+" мс · n="+data.count);
+  el("latency").title="Среднее время прямого прохода активной CNN. Предобработка и обратный проход Grad-CAM исключены.";
+}
+function browserName(){
+  const ua=navigator.userAgent;
+  for(const [pattern,name] of [[/Edg\/(\d+)/,"Edge"],[/Firefox\/(\d+)/,"Firefox"],[/Chrome\/(\d+)/,"Chrome"],[/Version\/(\d+).*Safari/,"Safari"]]){
+    const match=ua.match(pattern);if(match)return name+" "+match[1];
+  }
+  return navigator.userAgentData?.brands?.[0]?.brand || "Браузер";
+}
+el("browser").textContent=browserName();
+function mapImage(id,url,alt){const image=new Image();image.src=url;image.alt=alt;el(id).replaceChildren(image);}
+function showPrediction(result){
+  info(result);el("answer").textContent=result.digit;el("scores").replaceChildren();
+  for(const score of result.scores){
+    const row=document.createElement("div"), digit=document.createElement("span"), track=document.createElement("div"), fill=document.createElement("div"), value=document.createElement("b");
+    row.className="score";track.className="track";fill.className="fill";digit.textContent=score.digit;
+    value.textContent=(100*score.score).toFixed(1)+"%";fill.style.width=100*score.score+"%";
+    track.append(fill);row.append(digit,track,value);el("scores").append(row);
+  }
+  el("scores").title="Три наибольших значения softmax";
+  mapImage("input-map",result.input,"Пиксели на входе модели");mapImage("heat-map",result.overlay,"Grad-CAM для класса "+result.digit);
+  el("explanation").textContent=result.active?"Тёплые области поддерживают ответ «"+result.digit+"».":"У этого класса отсутствует положительный отклик последней свёртки.";
+}
+el("predict").onclick=async()=>{
+  if((mode==="draw"&&!hasInk)||(mode==="upload"&&!upload)){message("input-msg",mode==="draw"?"Сначала нарисуйте цифру.":"Выберите изображение.",true);return;}
+  const version=inputVersion;el("predict").disabled=true;message("input-msg","Вычисляем ответ и Grad-CAM…");
+  try{
+    const image=mode==="draw"?canvas.toDataURL("image/png"):upload;
+    const result=await api("/api/predict",{image,source:mode});
+    if(version===inputVersion){showPrediction(result);message("input-msg","Готово. Исходное изображение не сохранено.");el("requested").value=result.digit;if(el("pilot").value)await loadGallery();}
+  }catch(error){message("input-msg",error.message,true);}finally{el("predict").disabled=false;}
+};
+async function state(){
+  try{
+    const result=await api("/api/state");info(result);
+    el("pilot").replaceChildren(...result.pilots.map(run=>new Option(methodName(result.pilot_methods[run])+" · "+run,run)));
+    if(result.pilots.includes(chosenRun))el("pilot").value=chosenRun;else chosenRun=null;
+    el("unavailable").hidden=!result.skipped_pilots.length;
+    el("skip-list").replaceChildren(...result.skipped_pilots.map(entry=>{const li=document.createElement("li");li.textContent=entry.run+" — "+entry.reason;return li;}));
+    el("metric-rows").replaceChildren();
+    for(const model of result.metrics.rows){
+      const row=el("metric-rows").insertRow();[names[model.name]||model.name,(model.accuracy*100).toFixed(2)+"%",(model.f1*100).toFixed(2)+"%"].forEach(v=>row.insertCell().textContent=v);
+    }
+    el("metric-note").textContent="Результаты на 300 отложенных изображениях MNIST."+(result.metrics.selected_model?" По валидации выбрана модель: "+(names[result.metrics.selected_model]||result.metrics.selected_model)+".":"");
+    await loadGallery();
+  }catch(error){message("gallery-msg",error.message,true);}
+}
+async function loadGallery(){
+  const version=++galleryVersion,run=el("pilot").value;
+  el("gallery").replaceChildren();el("gallery-controls").hidden=!run;el("training").hidden=true;
+  el("gallery-intro").textContent="В галерее собраны заранее сгенерированные изображения MaskGen-L и TA-TiTok. Откройте вариант для ручной проверки.";
+  if(!run){message("gallery-msg","Набор ещё не подключён. Распакуйте архив из Colab в assignment2/outputs/ и нажмите «Обновить».");return;}
+  try{
+    const data=await api("/api/gallery?"+new URLSearchParams({pilot:run,digit:el("requested").value}));if(version!==galleryVersion)return;
+    if(data.method==="reference_masked_tokens_v1"){
+      el("gallery-intro").textContent="MaskGen-L и TA-TiTok изменили образцы из обучающей выборки A1 по текстовым подсказкам. Ответ CNN на ваш ввод выбирает класс в готовой галерее.";
+    }else if(data.method==="text_only"){
+      el("gallery-intro").textContent="Этот набор MaskGen-L и TA-TiTok создали по текстовым подсказкам. Ответ CNN на ваш ввод выбирает класс в готовой галерее.";
+    }
+    message("gallery-msg",data.items.length+" вариантов по запросу «"+el("requested").value+"». "+methodName(data.method)+". Принято во всём наборе: "+data.accepted+" из "+data.total+".");
+    for(const item of data.items){
+      const button=document.createElement("button"),img=new Image(),title=document.createElement("b"),label=document.createElement("small");
+      button.className="candidate";img.src=item.url;img.alt="Синтетический вариант "+item.sample;img.loading="lazy";
+      title.textContent=item.variant+" · "+(styles[item.style]||item.style);label.textContent=statuses[item.status]||item.status;
+      button.append(img,title,label);button.onclick=()=>inspect(run,item);el("gallery").append(button);
+    }
+    el("training-help").textContent=data.accepted?"Выполните команду из корня проекта в Python-окружении с PyTorch. В train попадут принятые варианты с ручными метками. После завершения нажмите «Обновить».":"Откройте кандидата, укажите видимую цифру и примите хотя бы один вариант для обучения.";
+    el("command").textContent=data.command;el("command").hidden=!data.accepted;el("training").hidden=false;
+  }catch(error){if(version===galleryVersion)message("gallery-msg",error.message,true);}
+}
+el("refresh").onclick=state;el("requested").onchange=loadGallery;
+el("pilot").onchange=()=>{chosenRun=el("pilot").value;loadGallery();};
+function reviewFlags(){el("consent-wrap").hidden=el("decision").value!=="accept";}
+async function inspect(run,item){
+  selected={run,item};const current=selected;
+  el("review-image").src=item.url;el("candidate-id").textContent=item.sample+" · синтетика";
+  el("source-figure").hidden=!item.reference;el("review-examples").classList.toggle("with-source",Boolean(item.reference));
+  if(item.reference){
+    el("source-image").src=item.reference.url;
+    el("source-caption").textContent="Исходник A1 train · цифра "+item.reference.digit+" · MNIST №"+item.reference.source_index;
+    el("source-caption").title=item.reference.path;
+  }else{el("source-image").removeAttribute("src");}
+  el("candidate-info").textContent="Запрос генератору: "+item.requested_digit+" · "+(styles[item.style]||item.style);
+  el("candidate-pred").textContent="Ответ CNN: вычисляем…";el("decision").value=item.status;
+  el("review-digit").value=item.reviewed_digit;el("notes").value=item.notes||"";
+  el("consent").checked=false;el("replace").checked=false;el("replace-wrap").hidden=item.status==="pending";reviewFlags();message("review-msg","");
+  dialog.showModal();
+  try{const result=await api("/api/candidate-prediction",{pilot:run,sample:item.sample});if(selected===current){el("candidate-pred").textContent="Ответ CNN: "+result.digit;info(result);}}
+  catch(error){if(selected===current)message("candidate-pred",error.message,true);}
+}
+el("decision").onchange=reviewFlags;el("close").onclick=()=>dialog.close();dialog.onclose=()=>{selected=null;};
+el("review-form").onsubmit=async(event)=>{
+  event.preventDefault();if(!selected)return;const {item,run}=selected;el("save").disabled=true;
+  try{
+    await api("/api/review",{pilot:run,sample:item.sample,revision:item.revision,status:el("decision").value,reviewed_digit:el("review-digit").value,
+      notes:el("notes").value,train_only:el("consent").checked,replace:el("replace").checked});
+    dialog.close();await loadGallery();
+  }catch(error){message("review-msg",error.message,true);}finally{el("save").disabled=false;}
+};
+state();
+</script>
+</body>
+</html>
